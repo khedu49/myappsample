@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+		<link rel="icon" type="image/gif/png" href="images/header/logo2.png">
+
+	<title>Login</title>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+     
+  <!--Firebase Library-->
+  <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase.js"></script>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts3/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts3/Linearicons-Free-v1.0.0/icon-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts3/iconic/css/material-design-iconic-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css1/tab1.css">
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+	<style>
+	        a:hover {
+         cursor:pointer;
+        }
+
+	</style>
+<!-- gandu -->
+</head>
+<body>
+
+	<div class="limiter" id="yo">
+		<div  class="container-login100">
+      <div class="login100-more" style="background-image: url('images/header/logo2.png');"></div>
+      
+      
+
+			<div class="wrap-login100 p-l-50 p-r-50 p-t-72 p-b-50">
+
+				<span class="login101-form-title p-b-59">
+					Login As
+				</span>
+						
+						<button class="tablink" onclick="openCity('Tokyo', this, '#B23121')">Student</button>
+						<button class="tablink" onclick="openCity('Oslo', this, '#B23121')">Teacher</button>
+							
+			 				<div id="Tokyo" class="tabcontent">
+								<!-- <h1>Tokyo</h1>
+								<p>Tokyo is the capital of Japan.</p> -->
+								<!-- <form class="login100-form validate-form"> -->
+										<span class="login100-form-title p-b-59">
+											<br>
+										</span>
+					
+										<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+								 			<span class="label-input100">Email</span>
+											<input id="emailId" class="input100" type="email" name="email" placeholder="Email address...">
+											<span class="focus-input100"></span>
+										</div>
+
+										<div class="wrap-input100 validate-input" data-validate = "Password is required">
+											<span class="label-input100">Password</span>
+											
+
+							 			<span>
+												<input  id="passId" class="input100" type="password" name="pass" placeholder="Enter password...">
+												<button style="float:right" class="btn btn-default reveal1" type="button"><i class="glyphicon glyphicon-eye-open" ></i></button>
+											</span>
+
+											<span class="focus-input100"></span>
+										</div>
+					
+                                        <div class="flex-m w-full p-b-33">
+                                                <div class="contact100-form-checkbox">
+                                                        <span class="txt1">
+        
+                                                            <a onclick="myfunct()" class="txt2 hov1">
+                                                                Forgot Password?
+                                                            </a>
+                                                        </span>
+                                                </div>
+                                            </div>
+					
+										<div class="container-login100-form-btn">
+											<div class="wrap-login100-form-btn">
+												<div class="login100-form-bgbtn"></div>
+												<button id="userLoginBtn" class="login100-form-btn">
+													Log in
+												</button>
+											</div>
+					
+											<a href="usertype.html" class="dis-block txt3 hov1 p-r-30 p-t-10 p-b-10 p-l-30">
+												Sign Up
+												<i class="fa fa-long-arrow-right m-l-5"></i>
+											</a>
+										</div>
+									<!-- </form> -->
+					
+							</div>
+							
+							<div id="Oslo" class="tabcontent">
+
+									<span class="login100-form-title p-b-59">
+										<br>
+									</span>
+				
+									<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+										<span class="label-input100">Email</span>
+										<input id="recEmailId" class="input100" type="email" name="email" placeholder="Email address...">
+										<span class="focus-input100"></span>
+									</div>
+
+									<div class="wrap-input100 validate-input" data-validate = "Password is required">
+										<span class="label-input100">Password</span>
+											  <span>
+													<input  id="recPass" class="input100" type="password" name="pass" placeholder="Enter password...">
+													
+												<button style="float:right" class="btn btn-default reveal" type="button"><i class="glyphicon glyphicon-eye-open" ></i></button>
+
+											  </span>
+											  
+										<span class="focus-input100"></span>
+									</div>
+				
+									<div class="flex-m w-full p-b-33">
+										<div class="contact100-form-checkbox">
+												<span class="txt1">
+
+													<a onclick="myfunct1()" class="txt2 hov1">
+														Forgot Password?
+													</a>
+												</span>
+										</div>
+									</div> 
+
+									<div class='container' id="coffee" style="
+									display: inline-block;
+									position: fixed;
+									top: 0;
+									bottom: 0;
+									left: 0;
+									right: 0;
+									width: 100%;
+									height: 100%;
+									display: none;
+									z-index:1000;
+									
+									background-color: rgba(255,255,255,0.7);
+									margin: auto;" >
+											<div class='loader'>
+											  <div class='loader--dot'></div>
+											  <div class='loader--dot'></div>
+											  <div class='loader--dot'></div>
+											  <div class='loader--dot'></div>
+											  <div class='loader--dot'></div>
+											  <div class='loader--dot'></div>
+											  <div class='loader--text'></div>
+											</div>
+										  </div>
+				
+									<div class="container-login100-form-btn">
+										<div class="wrap-login100-form-btn">
+											<div class="login100-form-bgbtn"></div>
+											<button id="recLoginBtn" class="login100-form-btn">
+												Log in
+											</button>
+										</div>
+				
+										<a href="usertype.html" class="dis-block txt3 hov1 p-r-30 p-t-10 p-b-10 p-l-30">
+											Sign Up
+											<i class="fa fa-long-arrow-right m-l-5"></i>
+										</a>
+									</div>
+
+							</div>
+			</div>
+		</div>
+	</div>
+  <script src="js/login.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/daterangepicker/moment.min.js"></script>
+	<script src="vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script>
+	
+
+	function openCity(cityName, elmnt, color) {
+  // Hide all elements with class="tabcontent" by default */
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  // Remove the background color of all tablinks/buttons
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].style.backgroundColor = "";
+  }
+
+  // Show the specific tab content
+  document.getElementById(cityName).style.display = "block";
+
+  // Add the specific color to the button used to open the tab content
+  elmnt.style.backgroundColor = color;
+}
+
+// Get the element with id="defaultOpen" and click on it
+// document.getElementById("defaultOpen").click();
+
+
+    </script>
+    
+ 
+    <script>
+            function myfunct()
+        {
+           const emailId = document.getElementById("emailId");
+           console.log(emailId.value);
+            var em = emailId.value;
+           if(em.length == 0)
+           {
+            alert("Please first enter your email to receive pssword reset email");
+           }
+           else
+           {
+            firebase.auth().sendPasswordResetEmail(emailId.value);
+            alert("Password reset link has been sent to your email");
+           }
+
+        }
+
+        function myfunct1()
+        {
+           const emailId = document.getElementById("recEmailId");
+           console.log(emailId.value);
+            var em = emailId.value;
+           if(em.length == 0)
+           {
+            alert("Please first enter your email to receive pssword reset email");
+           }
+           else
+           {
+            firebase.auth().sendPasswordResetEmail(emailId.value);
+            alert("Password reset link has been sent to your email");
+           }
+
+		}
+		
+		$(".reveal").on('click',function() {
+    var $pwd = $("#recPass");
+    if ($pwd.attr('type') === 'password') {
+        $pwd.attr('type', 'text');
+    } else {
+        $pwd.attr('type', 'password');
+    }
+});
+
+$(".reveal1").on('click',function() {
+    var $pwd = $("#passId");
+    if ($pwd.attr('type') === 'password') {
+        $pwd.attr('type', 'text');
+    } else {
+        $pwd.attr('type', 'password');
+    }
+});
+   
+    </script>
+
+
+</body>
+</html>
