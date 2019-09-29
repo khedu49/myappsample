@@ -1,0 +1,36 @@
+body,html{
+  height: 100%;
+}
+.blahblah{
+  background-image: url("images/header/lander.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-position: 100% 3%;
+  background-size:cover;
+  height: 100%;
+  background-color: #f3f3f3;
+ 
+}
+.btn-danger{
+  background-color: #D44638;
+  width: 10%;
+  box-shadow: 0 0 10px rgb(128, 126, 126);   
+}
+.login{
+  
+}
+.register{
+  
+}
+
+@media(max-width:375px){
+  .blahblah{
+  background-size: 100%;
+  background-position: 0% 47%;
+  }
+  .btn-danger{
+    width: 40%;
+  }
+  .l
+
+}

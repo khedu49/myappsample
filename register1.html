@@ -1,0 +1,1158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/gif/png" href="images/header/logo2.png">
+
+	<title>Register</title>
+  <meta charset="UTF-8"> 
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" /> 
+    
+  <!--Firebase Library-->
+  <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase.js"></script>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts3/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts3/Linearicons-Free-v1.0.0/icon-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts3/iconic/css/material-design-iconic-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css1/tab2.css">
+	
+  <!-- Material Design Theming -->
+  <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.orange-indigo.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script type="text/javascript" src="assets/js/materialize.min.js"></script>
+	
+    <link rel="stylesheet" href="css/main.css">
+    
+    <style>
+       /* popup start */
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* pop up end */
+
+        .refresher {
+                  width: 720px;
+                    height: 400px;
+                  background-color: rgb(152, 236, 225);
+                  
+                  outline-style: dotted;
+                    position: relative;
+                    top:0;
+                    bottom: 0;
+                    left: 0;
+                  right: 0;
+                  line-height: 350px; 
+                  text-align: center;
+                  font-size: 18px;
+                  
+                      
+                    margin: auto;
+                }
+                .navi{
+                  width: 100%;
+                  height: 100%;
+                  position: absolute;
+                  top: 40%;
+                  bottom: 0;
+                  left: 0;
+                }
+                .navi2{
+                  width: 100%;
+                  height: 100%;
+                  position: absolute;
+                  top: 45%;
+                  bottom: 0;
+                  left: 0;
+                }
+                .infoi {
+                  width: 100%;
+                  height: 100%;
+                  position: absolute;
+                  top: -20%;
+                  bottom: 0;
+                  left: 0;
+                }
+                .infoi {
+                  z-index: 10;
+                }
+                .butt {
+                  width: 100%;
+                  height: 100%;
+                  position: absolute;
+                  top: 40%;
+                  bottom: 0;
+                  left: 0;
+                }
+    
+                .input[type="text"]{
+                  width: 4em;
+                  margin: .5em 0 0 0;
+                  padding: .5em;
+                }
+    
+                .label{
+                  display:block;
+                }
+                
+                    </style>
+        
+  
+</head>
+<body>
+
+				<!-- Refresher Page starts -->
+				<div class="sf_top_header_img_wrapper">
+						<div class="gc_main_menu_wrapper">
+
+        <div  class="refresher" id="showyo">
+          <div  class="navi">
+              <p>Verification link has been sent to your email. Please open your email to finish verification.</p>
+              <!-- <img src="images\content\smalltick.png" height="50" width="50" /> -->
+          </div>
+          <div  class="navi2">
+                  <p>And then login to your account by pressing the button below.</p>
+                  <!-- <img src="images\content\smalltick.png" height="50" width="50" /> -->
+          </div>
+          <div class="infoi">
+            <!-- <p>Verification link has been sent to your email. Please open your email to finish signup.</p> -->
+            <img src="images\content\smalltick.png" height="50" width="50" />
+          </div>
+          <div class="butt">
+                  <input class="btn btn-primary login_btn" onclick="location.href='login.html';" value="Go to login page" />
+          </div>
+  
+  </div>
+  
+  <div  class="refresher" id="showyo1">
+          <div  class="navi">
+              <p>Verification link has been sent to your email. Please open your email to finish verification.</p>
+              <!-- <img src="images\content\smalltick.png" height="50" width="50" /> -->
+          </div>
+          <div  class="navi2">
+                  <p>And then login to your account by pressing the button below.</p>
+                  <!-- <img src="images\content\smalltick.png" height="50" width="50" /> -->
+          </div>
+          <div class="infoi">
+            <!-- <p>Verification link has been sent to your email. Please open your email to finish signup.</p> -->
+            <img src="images\content\smalltick.png" height="50" width="50" />
+          </div>
+          <div class="butt">
+                  <input class="btn btn-primary login_btn" onclick="location.href='login.html';" value="Go to login page" />
+          </div>
+  
+  </div>
+	
+	</div>
+	</div>
+  
+        <!-- Refresher page ends -->
+	
+	<div class="limiter" id="yo">
+		<div  class="container-login100">
+      <div class="login100-more" style="background-image: url('images/header/logo2.png');background-position: 40% 30%;"></div>
+      
+      
+
+			<div class="wrap-login100 p-l-50 p-r-50 p-t-72 p-b-50">
+
+				<span class="login101-form-title p-b-59">
+					Sign Up As
+				</span>
+						
+						<button class="tablink" >Teacher</button>
+
+							
+							<div id="Tokyo" class="tabcontent">
+								<!-- <h1>Tokyo</h1>
+								<p>Tokyo is the capital of Japan.</p> -->
+								<!-- <form class="login100-form validate-form"> -->
+										<span class="login100-form-title p-b-59">
+                      <br>
+                                        </span>
+                                        <div class="wrap-input100 validate-input" data-validate="Your location is required for the best matches">
+                                          <span class="label-input100">Teacher ID</span>
+                                          <input id="teacherId" class="input100" type="text" name="loc" placeholder="Enter Teacher ID">
+                                          <span class="focus-input100"></span>
+                                        </div>
+                                        <div class="wrap-input100 validate-input" data-validate="Your location is required for the best matches">
+                                            <span class="label-input100">Name</span>
+                                            <input id="name" class="input100" type="text" name="loc" placeholder="Enter Name">
+                                            <span class="focus-input100"></span>
+                                          </div>
+					
+										<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+											<span class="label-input100">Email</span>
+											<input id="emailId" class="input100" type="email" name="email" placeholder="Email addres">
+											<span class="focus-input100"></span>
+										</div>
+
+										<div class="wrap-input100 validate-input" data-validate = "Password is required">
+											<span class="label-input100">Password</span>
+                      <input  id="passId" class="input100" type="password" name="pass" placeholder="Enter password">
+                      <button style="float:right" class="btn btn-default reveal" type="button"><i class="glyphicon glyphicon-eye-open" ></i></button>
+											<span class="focus-input100"></span>
+										</div>
+					
+										<div class="wrap-input100 validate-input" data-validate = "Repeat Password is required">
+											<span class="label-input100">Re-enter Password</span>
+                      <input id="rPassId" class="input100" type="password" name="repeat-pass" placeholder="Re-enter password">
+                      <button style="float:right" class="btn btn-default reveal1" type="button"><i class="glyphicon glyphicon-eye-open" ></i></button>
+											<span class="focus-input100"></span>
+                    </div>
+                    
+                    <form id="sign-in-form2" action="#">
+                      <div class="wrap-input100 validate-input" data-validate="Branch is required">
+                        <span class="label-input100">Branch</span>
+                        
+  
+                      <div class="form-group">
+                        <select style="color: black" name="countryCode" id="chumma2">
+                            <option disabled selected>Selct Branch</option>
+                           <option data-countryCode="IN" value="Computer Engineering">Computer Engineering</option>
+                            <option data-countryCode="DZ" value="Information Technology">Information Technology</option>
+                            <option data-countryCode="AD" value="Civil Engineering">Civil Engineering</option>
+                            <option data-countryCode="AD" value="Instrumentation Engineering">Instrumentation Engineering</option>
+                            <option data-countryCode="AI" value="Mechanical Engineering">Mechanical Engineering</option>
+                            <option data-countryCode="AG" value="Electonics and Telecommunication">Electonics and Telecommunication</option>
+                        </select>
+                      </div>
+
+
+                        <input type="text" id="branch" class="input100" name="Phonenumber" placeholder="Your Branch">
+                        <span class="focus-input100"></span>
+                      </div>
+
+                      </form>
+
+                  
+                    <!-- User Phone verification html start -->
+
+
+                    <form id="sign-in-form" action="#">
+										<div class="wrap-input100 validate-input" data-validate="Mobile Phone number is required">
+                      <span class="label-input100">Mobile Number</span>
+                      
+
+
+
+
+
+
+
+
+
+
+                    <div class="form-group">
+                      <!-- <fieldset>
+                      <label for="name" id="yo" > Language :</label>   -->
+                      <!-- <input type="text" name="first_name"  id="damn1" placeholder="" disabled required/> -->
+                      <select style="color: black" name="countryCode" id="chumma">
+                          <option disabled selected>Selct Country Code</option>
+                         <option data-countryCode="IN" value="+91">India (+91)</option>                          
+                        <optgroup label="Other countries">
+                          <option data-countryCode="DZ" value="213">Algeria (+213)</option>
+                          <option data-countryCode="AD" value="376">Andorra (+376)</option>
+                          <option data-countryCode="AO" value="244">Angola (+244)</option>
+                          <option data-countryCode="AI" value="1264">Anguilla (+1264)</option>
+                          <option data-countryCode="AG" value="1268">Antigua &amp; Barbuda (+1268)</option>
+                          <option data-countryCode="AR" value="54">Argentina (+54)</option>
+                          <option data-countryCode="AM" value="374">Armenia (+374)</option>
+                          <option data-countryCode="AW" value="297">Aruba (+297)</option>
+                          <option data-countryCode="AU" value="61">Australia (+61)</option>
+                          <option data-countryCode="AT" value="43">Austria (+43)</option>
+                          <option data-countryCode="AZ" value="994">Azerbaijan (+994)</option>
+                          <option data-countryCode="BS" value="1242">Bahamas (+1242)</option>
+                          <option data-countryCode="BH" value="973">Bahrain (+973)</option>
+                          <option data-countryCode="BD" value="880">Bangladesh (+880)</option>
+                          <option data-countryCode="BB" value="1246">Barbados (+1246)</option>
+                          <option data-countryCode="BY" value="375">Belarus (+375)</option>
+                          <option data-countryCode="BE" value="32">Belgium (+32)</option>
+                          <option data-countryCode="BZ" value="501">Belize (+501)</option>
+                          <option data-countryCode="BJ" value="229">Benin (+229)</option>
+                          <option data-countryCode="BM" value="1441">Bermuda (+1441)</option>
+                          <option data-countryCode="BT" value="975">Bhutan (+975)</option>
+                          <option data-countryCode="BO" value="591">Bolivia (+591)</option>
+                          <option data-countryCode="BA" value="387">Bosnia Herzegovina (+387)</option>
+                          <option data-countryCode="BW" value="267">Botswana (+267)</option>
+                          <option data-countryCode="BR" value="55">Brazil (+55)</option>
+                          <option data-countryCode="BN" value="673">Brunei (+673)</option>
+                          <option data-countryCode="BG" value="359">Bulgaria (+359)</option>
+                          <option data-countryCode="BF" value="226">Burkina Faso (+226)</option>
+                          <option data-countryCode="BI" value="257">Burundi (+257)</option>
+                          <option data-countryCode="KH" value="855">Cambodia (+855)</option>
+                          <option data-countryCode="CM" value="237">Cameroon (+237)</option>
+                          <option data-countryCode="CA" value="1">Canada (+1)</option>
+                          <option data-countryCode="CV" value="238">Cape Verde Islands (+238)</option>
+                          <option data-countryCode="KY" value="1345">Cayman Islands (+1345)</option>
+                          <option data-countryCode="CF" value="236">Central African Republic (+236)</option>
+                          <option data-countryCode="CL" value="56">Chile (+56)</option>
+                          <option data-countryCode="CN" value="86">China (+86)</option>
+                          <option data-countryCode="CO" value="57">Colombia (+57)</option>
+                          <option data-countryCode="KM" value="269">Comoros (+269)</option>
+                          <option data-countryCode="CG" value="242">Congo (+242)</option>
+                          <option data-countryCode="CK" value="682">Cook Islands (+682)</option>
+                          <option data-countryCode="CR" value="506">Costa Rica (+506)</option>
+                          <option data-countryCode="HR" value="385">Croatia (+385)</option>
+                          <option data-countryCode="CU" value="53">Cuba (+53)</option>
+                          <option data-countryCode="CY" value="90392">Cyprus North (+90392)</option>
+                          <option data-countryCode="CY" value="357">Cyprus South (+357)</option>
+                          <option data-countryCode="CZ" value="42">Czech Republic (+42)</option>
+                          <option data-countryCode="DK" value="45">Denmark (+45)</option>
+                          <option data-countryCode="DJ" value="253">Djibouti (+253)</option>
+                          <option data-countryCode="DM" value="1809">Dominica (+1809)</option>
+                          <option data-countryCode="DO" value="1809">Dominican Republic (+1809)</option>
+                          <option data-countryCode="EC" value="593">Ecuador (+593)</option>
+                          <option data-countryCode="EG" value="20">Egypt (+20)</option>
+                          <option data-countryCode="SV" value="503">El Salvador (+503)</option>
+                          <option data-countryCode="GQ" value="240">Equatorial Guinea (+240)</option>
+                          <option data-countryCode="ER" value="291">Eritrea (+291)</option>
+                          <option data-countryCode="EE" value="372">Estonia (+372)</option>
+                          <option data-countryCode="ET" value="251">Ethiopia (+251)</option>
+                          <option data-countryCode="FK" value="500">Falkland Islands (+500)</option>
+                          <option data-countryCode="FO" value="298">Faroe Islands (+298)</option>
+                          <option data-countryCode="FJ" value="679">Fiji (+679)</option>
+                          <option data-countryCode="FI" value="358">Finland (+358)</option>
+                          <option data-countryCode="FR" value="33">France (+33)</option>
+                          <option data-countryCode="GF" value="594">French Guiana (+594)</option>
+                          <option data-countryCode="PF" value="689">French Polynesia (+689)</option>
+                          <option data-countryCode="GA" value="241">Gabon (+241)</option>
+                          <option data-countryCode="GM" value="220">Gambia (+220)</option>
+                          <option data-countryCode="GE" value="7880">Georgia (+7880)</option>
+                          <option data-countryCode="DE" value="49">Germany (+49)</option>
+                          <option data-countryCode="GH" value="233">Ghana (+233)</option>
+                          <option data-countryCode="GI" value="350">Gibraltar (+350)</option>
+                          <option data-countryCode="GR" value="30">Greece (+30)</option>
+                          <option data-countryCode="GL" value="299">Greenland (+299)</option>
+                          <option data-countryCode="GD" value="1473">Grenada (+1473)</option>
+                          <option data-countryCode="GP" value="590">Guadeloupe (+590)</option>
+                          <option data-countryCode="GU" value="671">Guam (+671)</option>
+                          <option data-countryCode="GT" value="502">Guatemala (+502)</option>
+                          <option data-countryCode="GN" value="224">Guinea (+224)</option>
+                          <option data-countryCode="GW" value="245">Guinea - Bissau (+245)</option>
+                          <option data-countryCode="GY" value="592">Guyana (+592)</option>
+                          <option data-countryCode="HT" value="509">Haiti (+509)</option>
+                          <option data-countryCode="HN" value="504">Honduras (+504)</option>
+                          <option data-countryCode="HK" value="852">Hong Kong (+852)</option>
+                          <option data-countryCode="HU" value="36">Hungary (+36)</option>
+                          <option data-countryCode="IS" value="354">Iceland (+354)</option>
+                          <!-- <option data-countryCode="IN" value="91">India (+91)</option> -->
+                          <option data-countryCode="ID" value="62">Indonesia (+62)</option>
+                          <option data-countryCode="IR" value="98">Iran (+98)</option>
+                          <option data-countryCode="IQ" value="964">Iraq (+964)</option>
+                          <option data-countryCode="IE" value="353">Ireland (+353)</option>
+                          <option data-countryCode="IL" value="972">Israel (+972)</option>
+                          <option data-countryCode="IT" value="39">Italy (+39)</option>
+                          <option data-countryCode="JM" value="1876">Jamaica (+1876)</option>
+                          <option data-countryCode="JP" value="81">Japan (+81)</option>
+                          <option data-countryCode="JO" value="962">Jordan (+962)</option>
+                          <option data-countryCode="KZ" value="7">Kazakhstan (+7)</option>
+                          <option data-countryCode="KE" value="254">Kenya (+254)</option>
+                          <option data-countryCode="KI" value="686">Kiribati (+686)</option>
+                          <option data-countryCode="KP" value="850">Korea North (+850)</option>
+                          <option data-countryCode="KR" value="82">Korea South (+82)</option>
+                          <option data-countryCode="KW" value="965">Kuwait (+965)</option>
+                          <option data-countryCode="KG" value="996">Kyrgyzstan (+996)</option>
+                          <option data-countryCode="LA" value="856">Laos (+856)</option>
+                          <option data-countryCode="LV" value="371">Latvia (+371)</option>
+                          <option data-countryCode="LB" value="961">Lebanon (+961)</option>
+                          <option data-countryCode="LS" value="266">Lesotho (+266)</option>
+                          <option data-countryCode="LR" value="231">Liberia (+231)</option>
+                          <option data-countryCode="LY" value="218">Libya (+218)</option>
+                          <option data-countryCode="LI" value="417">Liechtenstein (+417)</option>
+                          <option data-countryCode="LT" value="370">Lithuania (+370)</option>
+                          <option data-countryCode="LU" value="352">Luxembourg (+352)</option>
+                          <option data-countryCode="MO" value="853">Macao (+853)</option>
+                          <option data-countryCode="MK" value="389">Macedonia (+389)</option>
+                          <option data-countryCode="MG" value="261">Madagascar (+261)</option>
+                          <option data-countryCode="MW" value="265">Malawi (+265)</option>
+                          <option data-countryCode="MY" value="60">Malaysia (+60)</option>
+                          <option data-countryCode="MV" value="960">Maldives (+960)</option>
+                          <option data-countryCode="ML" value="223">Mali (+223)</option>
+                          <option data-countryCode="MT" value="356">Malta (+356)</option>
+                          <option data-countryCode="MH" value="692">Marshall Islands (+692)</option>
+                          <option data-countryCode="MQ" value="596">Martinique (+596)</option>
+                          <option data-countryCode="MR" value="222">Mauritania (+222)</option>
+                          <option data-countryCode="YT" value="269">Mayotte (+269)</option>
+                          <option data-countryCode="MX" value="52">Mexico (+52)</option>
+                          <option data-countryCode="FM" value="691">Micronesia (+691)</option>
+                          <option data-countryCode="MD" value="373">Moldova (+373)</option>
+                          <option data-countryCode="MC" value="377">Monaco (+377)</option>
+                          <option data-countryCode="MN" value="976">Mongolia (+976)</option>
+                          <option data-countryCode="MS" value="1664">Montserrat (+1664)</option>
+                          <option data-countryCode="MA" value="212">Morocco (+212)</option>
+                          <option data-countryCode="MZ" value="258">Mozambique (+258)</option>
+                          <option data-countryCode="MN" value="95">Myanmar (+95)</option>
+                          <option data-countryCode="NA" value="264">Namibia (+264)</option>
+                          <option data-countryCode="NR" value="674">Nauru (+674)</option>
+                          <option data-countryCode="NP" value="977">Nepal (+977)</option>
+                          <option data-countryCode="NL" value="31">Netherlands (+31)</option>
+                          <option data-countryCode="NC" value="687">New Caledonia (+687)</option>
+                          <option data-countryCode="NZ" value="64">New Zealand (+64)</option>
+                          <option data-countryCode="NI" value="505">Nicaragua (+505)</option>
+                          <option data-countryCode="NE" value="227">Niger (+227)</option>
+                          <option data-countryCode="NG" value="234">Nigeria (+234)</option>
+                          <option data-countryCode="NU" value="683">Niue (+683)</option>
+                          <option data-countryCode="NF" value="672">Norfolk Islands (+672)</option>
+                          <option data-countryCode="NP" value="670">Northern Marianas (+670)</option>
+                          <option data-countryCode="NO" value="47">Norway (+47)</option>
+                          <option data-countryCode="OM" value="968">Oman (+968)</option>
+                          <option data-countryCode="PW" value="680">Palau (+680)</option>
+                          <option data-countryCode="PA" value="507">Panama (+507)</option>
+                          <option data-countryCode="PG" value="675">Papua New Guinea (+675)</option>
+                          <option data-countryCode="PY" value="595">Paraguay (+595)</option>
+                          <option data-countryCode="PE" value="51">Peru (+51)</option>
+                          <option data-countryCode="PH" value="63">Philippines (+63)</option>
+                          <option data-countryCode="PL" value="48">Poland (+48)</option>
+                          <option data-countryCode="PT" value="351">Portugal (+351)</option>
+                          <option data-countryCode="PR" value="1787">Puerto Rico (+1787)</option>
+                          <option data-countryCode="QA" value="974">Qatar (+974)</option>
+                          <option data-countryCode="RE" value="262">Reunion (+262)</option>
+                          <option data-countryCode="RO" value="40">Romania (+40)</option>
+                          <option data-countryCode="RU" value="7">Russia (+7)</option>
+                          <option data-countryCode="RW" value="250">Rwanda (+250)</option>
+                          <option data-countryCode="SM" value="378">San Marino (+378)</option>
+                          <option data-countryCode="ST" value="239">Sao Tome &amp; Principe (+239)</option>
+                          <option data-countryCode="SA" value="966">Saudi Arabia (+966)</option>
+                          <option data-countryCode="SN" value="221">Senegal (+221)</option>
+                          <option data-countryCode="CS" value="381">Serbia (+381)</option>
+                          <option data-countryCode="SC" value="248">Seychelles (+248)</option>
+                          <option data-countryCode="SL" value="232">Sierra Leone (+232)</option>
+                          <option data-countryCode="SG" value="65">Singapore (+65)</option>
+                          <option data-countryCode="SK" value="421">Slovak Republic (+421)</option>
+                          <option data-countryCode="SI" value="386">Slovenia (+386)</option>
+                          <option data-countryCode="SB" value="677">Solomon Islands (+677)</option>
+                          <option data-countryCode="SO" value="252">Somalia (+252)</option>
+                          <option data-countryCode="ZA" value="27">South Africa (+27)</option>
+                          <option data-countryCode="ES" value="34">Spain (+34)</option>
+                          <option data-countryCode="LK" value="94">Sri Lanka (+94)</option>
+                          <option data-countryCode="SH" value="290">St. Helena (+290)</option>
+                          <option data-countryCode="KN" value="1869">St. Kitts (+1869)</option>
+                          <option data-countryCode="SC" value="1758">St. Lucia (+1758)</option>
+                          <option data-countryCode="SD" value="249">Sudan (+249)</option>
+                          <option data-countryCode="SR" value="597">Suriname (+597)</option>
+                          <option data-countryCode="SZ" value="268">Swaziland (+268)</option>
+                          <option data-countryCode="SE" value="46">Sweden (+46)</option>
+                          <option data-countryCode="CH" value="41">Switzerland (+41)</option>
+                          <option data-countryCode="SI" value="963">Syria (+963)</option>
+                          <option data-countryCode="TW" value="886">Taiwan (+886)</option>
+                          <option data-countryCode="TJ" value="7">Tajikstan (+7)</option>
+                          <option data-countryCode="TH" value="66">Thailand (+66)</option>
+                          <option data-countryCode="TG" value="228">Togo (+228)</option>
+                          <option data-countryCode="TO" value="676">Tonga (+676)</option>
+                          <option data-countryCode="TT" value="1868">Trinidad &amp; Tobago (+1868)</option>
+                          <option data-countryCode="TN" value="216">Tunisia (+216)</option>
+                          <option data-countryCode="TR" value="90">Turkey (+90)</option>
+                          <option data-countryCode="TM" value="7">Turkmenistan (+7)</option>
+                          <option data-countryCode="TM" value="993">Turkmenistan (+993)</option>
+                          <option data-countryCode="TC" value="1649">Turks &amp; Caicos Islands (+1649)</option>
+                          <option data-countryCode="TV" value="688">Tuvalu (+688)</option>
+                          <option data-countryCode="UG" value="256">Uganda (+256)</option>
+                          <option data-countryCode="GB" value="44">UK (+44)</option>
+                          <option data-countryCode="UA" value="380">Ukraine (+380)</option>
+                          <option data-countryCode="AE" value="971">United Arab Emirates (+971)</option>
+                          <option data-countryCode="UY" value="598">Uruguay (+598)</option>
+                          <option data-countryCode="US" value="1">USA (+1)</option>
+                          <option data-countryCode="UZ" value="7">Uzbekistan (+7)</option>
+                          <option data-countryCode="VU" value="678">Vanuatu (+678)</option>
+                          <option data-countryCode="VA" value="379">Vatican City (+379)</option>
+                          <option data-countryCode="VE" value="58">Venezuela (+58)</option>
+                          <option data-countryCode="VN" value="84">Vietnam (+84)</option>
+                          <option data-countryCode="VG" value="84">Virgin Islands - British (+1284)</option>
+                          <option data-countryCode="VI" value="84">Virgin Islands - US (+1340)</option>
+                          <option data-countryCode="WF" value="681">Wallis &amp; Futuna (+681)</option>
+                          <option data-countryCode="YE" value="969">Yemen (North)(+969)</option>
+                          <option data-countryCode="YE" value="967">Yemen (South)(+967)</option>
+                          <option data-countryCode="ZM" value="260">Zambia (+260)</option>
+                          <option data-countryCode="ZW" value="263">Zimbabwe (+263)</option>
+                        </optgroup>
+                      </select>
+                      <!-- </fieldset> -->
+                    </div>
+
+
+
+
+
+                      <!-- <input type="text" pattern="\+[0-9\s\-\(\)]+" id="phone-code" class="input100" name="Phonenumber" placeholder="Your mobile number..."> -->
+											<input type="text" pattern="\+[0-9\s\-\(\)]+" id="phone-number" class="input100" name="Phonenumber" placeholder="Your mobile number...">
+											<span class="focus-input100"></span>
+										</div>
+										<div class="container-login101-form-btn">
+                                            
+											<div class="wrap-login101-form-btn">
+												<div class="login101-form-bgbtn"></div>
+													<button disabled class="login101-form-btn" id="sign-in-button">
+														Send OTP
+													</button>
+												</div>
+											</div>
+                    </form>
+
+                    <form id="verification-code-form" action="#">
+										<div class="wrap-input100 validate-input" data-validate="Enter valid otp send to your phone number...">
+											<span class="label-input100">Enter OTP sent to your mobile phone</span>
+											<input id="verification-code" class="input100" type="text" name="Phonenumber" placeholder="OTP...">
+											<span class="focus-input100"></span>
+                    </div> 
+										<div class="container-login101-form-btn">                                            
+											<div class="wrap-login101-form-btn">
+												<div class="login101-form-bgbtn"></div>
+													<button type="submit" id="verify-code-button" class="login101-form-btn">
+														Verify
+													</button>
+                        </div>
+                                           
+                    </div>
+                  </form>
+
+                  <!-- <div class="container-login101-form-btn"> 
+                      <div class="wrap-login101-form-btn">
+                          <div class="login101-form-bgbtn"></div>
+                            <button type="submit" id="sign-out-button" class="login101-form-btn">
+                              signOut
+                            </button>
+                          </div>
+                  </div>   -->
+                    
+                    
+                    <!-- User Phone verification html Ends -->
+	
+                    <div class="flex-m w-full p-b-33">
+                        <h5><span class="txt1" id="khedu"> 
+                          Verify your Mobile number to SignUp
+                        </span></h5>
+                    </div> 
+
+										<div class="flex-m w-full p-b-33">
+											<div class="contact100-form-checkbox">
+												<input  id="ckb1" type="checkbox" name="remember-me">
+												<label  for="ckb1">
+													<span class="txt1">
+														I agree to the
+														<a style="color: aqua" id="myBtn" class="txt2 hov1">
+															Terms of User
+														</a>
+													</span>
+												</label>
+                      </div>
+											
+                    </div>
+                    
+  <!-- //popup -->
+
+  <div id="myModal" class="modal">
+
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <p><b>Terms and conditions...</b><br>
+          Please read the Terms of Use (“the Terms,” or “Terms and Conditions”) carefully before you start using the website https://www.step2fame.com/ or step2fame.co.in or step2fame.in ( “step2fame,” or “the Website”), owned and operated by Graviton Media Tech (“Graviton,””GMT,” “Company,” or “We”). All the elements and content of this Website are a property of Graviton Media Tech.
+The Terms include the Privacy Policy of step2fame which is assimilated into the Terms of Use by reference. By using step2fame.com or step2fame.co.in or step2fame.in, you, as a user (“You”) approve to be bound by the Terms and privacy policy.
+If “You” do not want to abide by the Terms stated herein, You must not use step2fame and any of the services offered by it. By using Website, you are signifying your acceptance of all provision of the Terms of Use. Step2fame will periodically update its Terms of Use and Privacy Policy, anytime without giving any prior notice to You, so we advise You to review this page, to ensure that You have the most accurate information.
+The Company reserves the right to suspend or close accounts of users that violate these Terms and Conditions. By using the Website you confirm your acceptance of our Terms of Use and Privacy Policy.
+Eligibility
+By using Step2fame.com or accepting the Terms, You warrant and embody to the Company that You have the authority, and right to use Step2fame and agree to and abide by all the provisions of the Terms. You also warrant to the Company that You will be using the Website in compliance with all applicable laws and regulations.
+Use of Website content and Website Restrictions
+You agree to use the Website in compliance with all relevant laws and regulations, and in a manner that does not adversely reflect on the goodwill of the Company, or negatively influence the availability, performance, or accessibility of the Website. Unauthorised use of Step2fame content is in strict violation of these laws, and is not allowed under any circumstance
+While using the Website, You must not:
+•	Use this Website or its contents for any unauthorized commercial purpose;
+•	Use our Website to copy, transmit, store, distribute, or publish any material with any computer virus, spyware, Trojan horse, keystroke logger, worm, rootkit or any other malicious computer software;
+•	Violate third party rights on the Website;
+•	Conduct any automated or systematic data collection activities on or in relation to our Website without prior written consent;
+•	Collect and store other users’ personal information without their proper authorization;
+•	Use the Website for any activity that is harmful to minors.
+•	Use the Website for any activity that will infringe the copyright, trademark or intellectual property of the Step2fame site or its users.
+•	Otherwise violate these Terms.
+Users are strictly forbidden from violating or attempting to violate Website’s security, including, without limitation the following activities:
+•	Attempting to test, probe, or scan defencelessness of the network or system, or to break authentication or security measures without having proper authorization;
+•	Accessing data not intended for User or logging into an account or server which the User is not authorized to access;
+•	Imitating any TCP/IP packet header, or a part of it in any newsgroup posting or e-mail. Violations of network or system security could result in criminal or civil liability.
+•	The Company will investigate all the occurrences which may involve any such violations and, will corporate with law enforcement authorities to prosecute users who are involved in it;
+•	Attempting to post, upload, submit, send, transmit, or publish material that is abusive, harmful, harassing, threatening, obscene, vulgar, or libelous, of other’s privacy.
+Registration and Third Party information
+When you register an account with Step2fame, you must provide us with a valid email address. By registering with our site, you understand that Step2fame may disclose to third parties, anonymously, content contained in your registration. This will include any personal data such as name, telephone number, email, in cases to comply with relevant laws, in legal instances or to help you get work.
+The company reserves the right to offer third party services to you based on preferences that you provide to us in your registration.
+Use of the Step2fame Services
+Step2fame may only be used by the following: Individuals seeking employment in the film industry, media houses, advertising agencies or any other print or media related purposes. You should use the site responsibly at all times.
+Prohibited uses:
+You are strictly prohibited from using Step2fame for any of the following:
+To impersonate a person.
+•	To post, transmit or destroy material that is in direct violation to applicable law.
+•	Interfere with any contact with an agency and a third party.
+•	Post any jobs on the Step2fame site for a competitor of Step2fame.
+•	Post any content on the site with hyperlinks, email addresses or keywords that are irrelevant to the job listing.
+•	Take any personal information from another user.
+•	Send unsolicited email.
+•	Use the Step2fame site for any unlawful use or illegal activity.
+•	Insertion of the user’s personal URL, website or email address whilst posting a job listing.
+User content and submissions
+You have sole responsibility for your Step2fame account information, messages and any content that you send or publish on the site. You give Step2fame and its affiliates licence to use, reproduce and distribute user content as generated by you in any form, media or on any technological device.
+Job posting
+Job posting by users is not allowed on the website, if allowed in future, it should not contain the following:
+•	Any hyperlinks, other than those allowed by Step2fame,
+•	Misleading, hidden or irrelevant keywords,
+•	More than one job description,
+•	Inaccurate or misleading information,
+•	Names, logos or trademarks of unaffiliated companies.
+•	Any material that harms individuals in a violent or sexual manner.
+Mobile services
+When using Step2fame through a mobile device, you agree to Step2fame being given information about your use of Step2fame through this device and through your carrier.  Use of the Website through a mobile device may cause Step2fame to display data on your mobile phone. If you alter or close your mobile account, you will need to update your Step2fame account information, in order to ensure accuracy and that you receive all messages to your account. You, as a user, are responsible for all network charges whilst accessing the Website or Step2fame Mobile Application from your mobile phone.
+We can change the Website’s Terms (including privacy policy) and without sending any prior notice to You. Users should visit this page to keep themselves updated with the terms. The terms of use are applicable on you as long as you are a user of Step2fame.com or any of its services.
+WE DOES NOT WARRANT THAT STEP2FAME WILL OPERATE ERROR-FREE OR THAT THE WEBSITE AND ITS SERVER ARE FREE OF HARMFUL MECHANISMS OR COMPUTER VIRUSES. IF YOUR USE OF STEP2FAME OR THE MATERIALS WITHIN RESULTS IN THE NEED FOR REPLACING DATA, EQUIPMENT, OR NEED ANY TYPE OF SERVICING, WE ARE NOT RESPONSIBLE FOR THOSE COSTS. WE ALSO MAKE NO ASSURANCES ABOUT THE COMPLETENESS, ACCURACY, OR RELIABILITY OF THE SERVICES OFFERED, SOFTWARE, LINKS, GRAPHICS, AND TEXT.
+
+1. Terms
+By accessing this web site, you are agreeing to be bound by these web site Terms and Conditions of Use, all applicable laws and regulations, and agree that you are responsible for compliance with any applicable local laws. If you do not agree with any of these terms, you are prohibited from using or accessing this site. The materials contained in this web site are protected by applicable copyright and trade mark law.
+2. Disclaimer
+a. The materials on Graviton Media Tech(Step2Fame.com)’s web site are provided “as is”. Graviton Media Tech(Step2Fame.com) makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties, including without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights. Further, Graviton Media Tech(Step2Fame.com) does not warrant or make any representations concerning the accuracy, likely results, or reliability of the use of the materials on its Internet web site or otherwise relating to such materials or on any sites linked to this site.
+4. Limitations
+In no event shall Graviton Media Tech(Step2Fame.com) or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption,) arising out of the use or inability to use the materials on Graviton Media Techs’(Step2Fame.com) Internet site, even if Graviton Media Tech(Step2Fame.com) or a Graviton Media Tech(Step2Fame.co.in) authorized representative has been notified orally or in writing of the possibility of such damage. Because some jurisdictions do not allow limitations on implied warranties, or limitations of liability for consequential or incidental damages, these limitations may not apply to you.
+5. Revisions and Errata
+The materials appearing on Graviton Media Tech(Step2Fame.com)’s web site could include technical, typographical, or photographic errors. Graviton Media Tech(Step2Fame.com) does not warrant that any of the materials on its web site are accurate, complete, or current. Graviton Media Tech(Step2Fame.com) may make changes to the materials contained on its web site at any time without notice. Graviton Media Tech(Step2Fame.com) does not, however, make any commitment to update the materials.
+6. Links
+Graviton Media Tech(Step2Fame.com) has not reviewed all of the sites linked to its Internet web site and is not responsible for the contents of any such linked site. The inclusion of any link does not imply endorsement by Graviton Media Tech(Step2Fame.com) of the site. Use of any such linked web site is at the user’s own risk.
+7. Site Terms of Use Modifications
+Graviton Media Tech(Step2Fame.com) may revise these terms of use for its web site at any time without notice. By using this web site you are agreeing to be bound by the then current version of these Terms and Conditions of Use.
+8. Governing Law
+Any claim relating to Graviton Media Tech(Step2Fame.com)’s web site shall be governed by the laws of the State of Maharshtra without regard to its conflict of law provisions. General Terms and Conditions applicable to Use of a Web Site.
+Welcome to Step2Fame! 
+
+Welcome to our website. If you continue to browse and use this website, you are agreeing to comply with and be bound by the following terms and conditions of use, which together with our privacy policy govern www.Step2Fame.com's relationship with you in relation to this website. If you disagree with any part of these terms and conditions, please do not use our website. The term ‘www.Step2Fame.com’ or ‘us’ or ‘we’ refers to the owner of the website whose office is owned by Graviton Media Tech. The term ‘you’ refers to the user or viewer of our website.
+•	The content of the pages of this website is for your general information and use only. It is subject to change without notice.
+•	This website uses cookies to monitor browsing preferences. If you do allow cookies to be used, the following personal information may be stored by us for use by third parties: name, address, email address, phone number.
+•	Neither we nor any third parties provide any warranty or guarantee as to the accuracy, timeliness, performance, completeness or suitability of the information and materials found or offered on this website for any particular purpose. You acknowledge that such information and materials may contain inaccuracies or errors and we expressly exclude liability for any such inaccuracies or errors to the fullest extent permitted by law.
+•	Your use of any information or materials on this website is entirely at your own risk, for which we shall not be liable. It shall be your own responsibility to ensure that any products, services or information available through this website meet your specific requirements.
+•	This website contains material which is not owned by or licensed to us. This material includes, but is not limited to, the design, layout, look, appearance and graphics. Reproduction is prohibited other than in accordance with the copyright notice, which forms part of these terms and conditions.
+•	All trademarks reproduced in this website, which are not the property of, or licensed to the operator, are acknowledged on the website.
+•	Unauthorised use of this website may give rise to a claim for damages and/or be a criminal offence.
+•	From time to time, this website may also include links to other websites. These links are provided for your convenience to provide further information. They do not signify that we endorse the website(s). We have no responsibility for the content of the linked website(s).
+•	Your use of this website and any dispute arising out of such use of the website is subject to the local laws where the company is based.
+
+These Terms govern your use of Step2Fame and the products, features, apps, services, technologies and software that we offer (the Step2Fame Products or Products), except where we expressly state that separate Terms (and not these) apply. 
+1. Our services 
+2. Our Data Policy and your privacy choices 
+3. Your commitments to Step2Fame and our community 
+4. Additional provisions 
+5. Other Terms and Policies that may apply to you
+Step2Fame Ads Controls 
+Privacy Basics 
+Cookies Policy 
+Data Policy 
+
+
+1. Our services 
+Our mission is to give people the power to build community and bring the world closer together to get work and to find talent in the media related industry. To help advance this mission, we provide the products and services described below to you: 
+Provide a personalised experience for you:
+Your experience on Step2Fame is unlike anyone else's: from the posts, stories, events, ads and other content that you see in Dashboard or our video platform to the Pages that you follow and other features that you might use, such as Trending and search. We use the data that we have – for example, about the connections you make, the choices and settings you select, and what you share and do on and off our Products – to personalise your experience. 
+Connect you with people and organisations that you want to work with:
+We help you find and connect with people, groups, businesses, organisations and others that matter to you across the Step2Fame Products that you use. We use the data that we have to make suggestions for you and others – for example, send a message to, jobs or projects to watch for and people or organization who you may want to work with. Stronger ties make for better opportunities, and we believe that our services are most useful when people are connected to people, groups and organisations that they want to work with. 
+
+Empower you to project yourself and find the kind of work that matters to you:
+There are many ways to project yourself on Step2Fame and to communicate with media agencies, production houses and print media and others about you – for example, sharing photos, videos and stories across the Step2Fame Products that you use, sending messages to several people, creating project or groups, or adding content to your profile. We have also developed, and continue to explore, new ways for people to use technology, such as augmented reality and 360 video to create and share more expressive and engaging content on Step2Fame. 
+Help you discover content, products and services that may interest you:
+We show you ads, offers and other sponsored content to help you discover content, products and services that are offered by the many businesses and organisations that use Step2Fame and other Step2Fame Products. Our partners pay us to show their content to you, and we design our services so that the sponsored content you see is as relevant and useful to you as everything else that you see on our Products. 
+
+Combat harmful conduct, and protect and support our community:
+People will only build projects or profiles on Step2Fame if they feel safe. We employ dedicated teams around the world and develop advanced technical systems to detect misuse of our Products, harmful conduct towards others and situations where we may be able to help support or protect our members. If we learn of content or conduct like this, we will take appropriate action – for example, offering help, removing content, blocking access to certain features, disabling an account or contacting law enforcement. We share data with other Step2Fame Companies when we detect misuse or harmful conduct by someone using one of our Products. 
+Use and develop advanced technologies to provide safe and functional services for everyone:
+We use and develop advanced technologies such as artificial intelligence, machine learning systems and augmented reality so that people can use our Products safely regardless of physical ability or geographic location. For example, technology such as this helps people who have visual impairments understand what or who is in photos or videos shared on Step2Fame. We also build sophisticated network and communication technology to help more people connect to the Internet in areas with limited access. And we develop automated systems to improve our ability to detect and remove abusive and dangerous activity that may harm our community and the integrity of our Products. 
+
+Research ways to make our services better:
+We engage in research and collaborate with others to improve our Products. One way we do this is by analysing the data we have and understanding how people use our Products. 
+Provide consistent and seamless experiences across the Step2Fame Company Products:
+Our Products help you find and connect with people, groups, businesses, organisations, media houses, ad agencies, production houses and others that are important to you. We design our systems so that your experience is consistent and seamless across the different Step2Fame Company Products that you use. For example, we use data about the people you engage with on Step2Fame to make it easier for you to connect with them, and we enable you to communicate with businesses that you follow on Step2Fame. 
+
+Enable global access to our services:
+To operate our global service, we need to store and distribute content and data in our data centres and systems around the world, including outside your country of residence. This infrastructure may be operated or controlled by Step2Fame, Inc., Firebase technologies or others. 
+2. Our Data Policy and your privacy choices 
+To provide these services, we must collect and use your personal data. We detail our practices in the Data Policy, which you must agree to in order to use our Products. 
+We also encourage you to review the privacy choices that you have in your settings. 
+3. Your commitments to Step2Fame 
+We provide these services to you and others to help advance our mission. In exchange, we need you to make the following commitments: 
+1. Who can use Step2Fame
+When people stand behind their opinions and actions, our community is safer and more accountable. For this reason, you must: 
+•	Use the same name that you use in everyday life.
+•	Provide accurate information about yourself.
+•	Create only one account (your own) and use your profile for searching for work.
+•	Not share your password, give access to your Step2Fame account to others or transfer your account to anyone else (without our permission).
+We try to make Step2Fame broadly available to everyone, but you cannot use Step2Fame if:
+•	You are not above the minimum legal age in your country to use our Products).
+•	You are a convicted sex offender.
+•	We've previously disabled your account for breaches of our Terms or Policies.
+•	You are prohibited from receiving our products, services or software under applicable laws.
+2. What you can share and do on Step2Fame
+We want people to use Step2Fame to find work for themselves and to share content that is important to them, but not at the expense of the safety and well-being of others or the integrity of the film and media industry. You therefore agree not to engage in the conduct described below (or to facilitate or support others in doing so): 
+1.	You may not use our Products to do or share anything: 
+•	That breaches these Terms, our Community Standards and other Terms and Policies that apply to your use of Step2Fame.
+•	That is unlawful, misleading, discriminatory or fraudulent.
+•	That infringes or breaches someone else's rights.
+2.	You may not upload viruses or malicious code, or do anything that could disable, overburden or impair the proper working or appearance of our Products.
+3.	You may not access or collect data from our Products using automated means (without our prior permission) or attempt to access data that you do not have permission to access.
+We can remove content that you share in breach of these provisions and, if applicable, we may take action against your account, for the reasons described below. We may also disable your account if you repeatedly infringe other people's intellectual property rights. 
+To help support our community, we encourage you to report content or conduct that you believe breaches your rights (including intellectual property rights) or our terms and policies. 
+
+3. The permissions you give us
+We need certain permissions from you to provide our services: 
+
+1.	Permission to use content that you create and share: You own the content that you create and share on Step2Fame and the other Step2Fame Products you use, and nothing in these Terms takes away the rights that you have to your own content. You are free to share your content with anyone else, wherever you want. To provide our services, however, we need you to give us some legal permissions to use this content. 
+Specifically, when you share, post or upload content that is covered by intellectual property rights (e.g. photos or videos) on or in connection with our Products, you grant us a non-exclusive, transferable, sub-licensable, royalty-free and worldwide licence to host, use, distribute, modify, run, copy, publicly perform or display, translate and create derivative works of your content (consistent with your privacy and application settings). This means, for example, that if you share a photo on Step2Fame, you give us permission to store, copy and share it with others (again, consistent with your settings) such as service providers that support our service or other Step2Fame Products that you use. 
+You can end this licence at any time by deleting your content or account. You should know that, for technical reasons, any content that you delete may persist for a limited period of time in backup copies (though it will not be visible to other users). In addition, content that you delete may continue to appear if you have shared it with others and they have not deleted it.
+2.	Permission to use your name, profile picture and information about your actions with ads and sponsored content:You give us permission to use your name and profile picture and information about actions that you have taken on Step2Fame next to or in connection with ads, offers and other sponsored content that we display across our Products, without any compensation to you. For example, we may show your friends that you are interested in a project or have liked a Profile created by a brand that has paid us to display its ads on Step2Fame. Ads like this can be seen only by people who have your permission to see the actions that you've taken on Step2Fame. You can learn more about your ad settings and preferences. 
+3.	Permission to update software that you use or download: If you download or use our software, you give us permission to download and install upgrades, updates and additional features to improve, enhance and further develop it. 
+4. Limits on using our intellectual property
+If you use content covered by intellectual property rights that we have and make available in our Products (for example, images, designs, videos or sounds that we provide, which you add to content that you create or share on Step2Fame), we retain all rights to that content (but not yours). You can only use our copyrights or trademarks (or any similar marks) as expressly permitted by our Brand Usage Guidelines or with our prior written permission. You must obtain our written permission (or permission under an open source licence) to modify, create derivative works of, decompile or otherwise attempt to extract source code from us. 
+4. Additional provisions 
+1. Updating our Terms
+We work constantly to improve our services and develop new features to make our Products better for you and our community. As a result, we may need to update these Terms from time to time to accurately reflect our services and practices. Unless otherwise required by law, we will notify you before we make changes to these Terms and give you an opportunity to review them before they go into effect. Once any updated Terms are in effect, you will be bound by them if you continue to use our Products. 
+We hope that you will continue using our Products, but if you do not agree to our updated Terms and no longer want to be a part of the Step2Fame community, you can delete your account at any time. 
+
+2. Account suspension or termination
+We want Step2Fame to be a place where people feel welcome and safe to search work for themselves and share their portfolios. 
+If we determine that you have breached our terms or policies, we may take action against your account to protect our community and services, including by suspending access to your account or disabling it. We may also suspend or disable your account if you create risk or legal exposure for us or when we are permitted or required to do so by law. Where appropriate, we will notify you about your account the next time you try to access it. 
+If you delete or we disable your account, these Terms shall terminate as an agreement between you and us, but the following provisions will remain in place: 3, 4.2-4.5 
+
+3. Limits on liability
+We work hard to provide the best Products we can and to specify clear guidelines for everyone who uses them. Our Products, however, are provided "as is", and we make no guarantees that they will always be safe, secure or error-free, or that they will function without disruptions, delays or imperfections. To the extent permitted by law, we also DISCLAIM ALL WARRANTIES, WHETHER EXPRESS OR IMPLIED, INCLUDING THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE AND NON-INFRINGEMENT. We do not control or direct what people and others do or say, and we are not responsible for their actions or conduct (whether online or offline) or any content that they share (including offensive, inappropriate, obscene, unlawful and other objectionable content). 
+We cannot predict when issues may arise with our Products. Accordingly, our liability shall be limited to the fullest extent permitted by applicable law, and under no circumstances will we be liable to you for any lost profits, revenues, information or data, or consequential, special, indirect, exemplary, punitive or incidental damages arising out of or related to these Terms or the Step2Fame Products, even if we have been advised of the possibility of such damages. 
+4. Disputes
+We try to provide clear rules so that we can limit or hopefully avoid disputes between you and us. If a dispute does arise, however, it's useful to know up front where it can be resolved and what laws will apply. 
+If you are a consumer, the laws of the country in which you reside will apply to any claim, cause of action or dispute that you have against us, which arises out of or relates to these Terms or the Step2Fame Products ("claim"), and you may resolve your claim in any competent court in that country that has jurisdiction over the claim. In all other cases, you agree that the claim must be resolved exclusively in the District Court of Mumbai/Maharashtra or a state court located in Mumbai, that you submit to the personal jurisdiction of either of these courts for the purpose of litigating any such claim, and that the laws of the State of Maharashtra will govern these Terms and any claim, without regard to conflict of law provisions. 
+
+5. Other
+1.	These Terms (formerly known as the Statement of Rights and Responsibilities) make up the entire agreement between you and Step2Fame(Graviton Media Tech). regarding your use of our Products. They supersede any prior agreements.
+2.	Some of the Products we offer are also governed by supplemental Terms. If you use any of those Products, supplemental terms will be made available and will become part of our agreement with you. For instance, if you access or use our Products for commercial or business purposes, such as buying ads, selling products, developing apps, managing a group or Page for your business, or using our measurement services, you must agree to our Commercial Terms. If you post or share content containing music, you must comply with our Music Guidelines. To the extent that any supplemental Terms conflict with these Terms, the supplemental Terms shall govern to the extent of the conflict.
+3.	If any portion of these Terms is found to be unenforceable, the remaining portion will remain in full force and effect. If we fail to enforce any of these Terms, it will not be considered a waiver. Any amendment to or waiver of these Terms must be made in writing and signed by us.
+4.	You will not transfer any of your rights or obligations under these Terms to anyone else without our consent.
+5.	You may designate a person (called a legacy contact) to manage your account if it is memorialised. Only your legacy contact or a person who you have identified in a valid will or similar document expressing clear consent to disclose your content upon death or incapacity will be able to seek disclosure from your account after it is memorialised.
+6.	These Terms do not confer any third-party beneficiary rights. All of our rights and obligations under these Terms are freely assignable by us in connection with a merger, acquisition or sale of assets, or by operation of law or otherwise.
+7.	You should know that we may need to change the username for your account in certain circumstances (for example, if someone else claims the username and it appears unrelated to the name that you use in everyday life).
+8.	We always appreciate your feedback and other suggestions about our products and services. But you should know that we may use them without any restriction or obligation to compensate you, and we are under no obligation to keep them confidential.
+9.	We reserve all rights not expressly granted to you.
+5. Other Terms and Policies that may apply to you
+•	Community Standards: These guidelines outline our standards regarding the content that you post to Step2Fame and your activity on Step2Fame and other Step2Fame Products.
+•	Commercial Terms: These Terms apply if you also access or use our Products for any commercial or business purpose, including advertising, operating an app on our Platform, using our measurement services, managing a group or a Page for a business, or selling goods or services.
+•	Advertising Policies: These Policies specify what types of ad content are allowed by partners who advertise across the Step2Fame Products.
+•	Self-Serve Ad Terms: These Terms apply when you use self-serve advertising interfaces to create, submit or deliver advertising or other commercial or sponsored activity or content.
+•	Pages, Groups and Events Policy: These guidelines apply if you create or administer a Step2Fame Page, group or event, or if you use Step2Fame to communicate or administer a promotion.
+•	Step2Fame Platform Policy: These guidelines outline the Policies that apply to your use of our platform (for example, for developers or operators of a platform application or website or if you use social plugins).
+•	Developer Payment Terms: These Terms apply to developers of applications that use Step2Fame Payments.
+•	Community Payment Terms: These Terms apply to payments made on or through Step2Fame.
+•	Commerce Policies: These guidelines outline the Policies that apply when you offer products and services for sale on Step2Fame.
+•	Step2Fame Brand Resources: These guidelines outline the Policies that apply to the use of Step2Fame trademarks, logos and screenshots.
+•	Music Guidelines: These guidelines outline the Policies that apply if you post or share content containing music on Step2Fame.
+
+
+
+•	Data Policy
+This Policy describes the information we process to support Step2Fame and other products and features offered by Step2Fame (Step2Fame Products or Products). You can find additional tools and information in the Step2Fame settings 
+What kinds of information do we collect? 
+How do we use this information? 
+How is this information shared? 
+How do the Step2Fame Companies work together? 
+How can I manage or delete information about me? 
+How do we respond to legal requests or prevent harm? 
+How do we operate and transfer data as part of our global services? 
+How will we notify you of changes to this Policy? 
+How to contact Step2Fame with questions
+Step2Fame Ads Controls 
+Privacy Basics
+Cookies Policy
+Terms
+
+More resources
+•	View a printable version of the Data Policy 
+•	Interactive tools 
+•	Minors and safety 
+•	Step2Fame Privacy Page 
+•	Step2Fame Safety Page 
+•	Step2Fame Site Governance Page 
+•	EU-US Privacy Shield and Swiss-US Privacy Shield Notice 
+What kinds of information do we collect?
+To provide the Step2Fame Products, we must process information about you. The type of information that we collect depends on how you use our Products. You can learn how to access and delete information that we collect by visiting the Step2Fame settings 
+Things that you and others do and provide.
+•	Information and content you provide. We collect the content, communications and other information you provide when you use our Products, including when you sign up for an account, create or share content and message or communicate with others. This can include information in or about the content that you provide (e.g. metadata), such as the location of a photo or the date a file was created. It can also include what you see through features that we provide, such as our camera, so we can do things such as suggest masks and filters that you might like, or give you tips on using camera formats. Our systems automatically process content and communications that you and others provide to analyse context and what's in them for the purposes described below. Learn more about how you can control who can see the things you share. 
+•	Data with special protections: You can choose to provide information in your Step2Fame profile fields  about your religious views, political views, who you are "interested in" or your health. This and other information (such as racial or ethnic origin, philosophical beliefs or trade union membership) could be subject to special protections under the laws of your country.
+•	Networks and connections. We collect information about the people, Pages, accounts, hashtags and groups that you are connected to and how you interact with them across our Products, such as people you communicate with the most or groups that you are part of. We also collect contact information if you choose to upload, sync or import it from a device (such as an address book or call log or SMS log history), which we use for things such as helping you and others find people you may know and for the other purposes listed below.
+•	Your usage. We collect information about how you use our Products, such as the types of content that you view or engage with, the features you use, the actions you take, the people or accounts you interact with and the time, frequency and duration of your activities. For example, we log when you're using and have last used our Products, and what posts, videos and other content you view on our Products. We also collect information about how you use features such as our camera.
+•	Information about transactions made on our Products. If you use our Products for purchases or other financial transactions (such as when you make a purchase in a game or make a donation), we collect information about the purchase or transaction. This includes payment information, such as your credit or debit card number and other card information, other account and authentication information, and billing, delivery and contact details.
+•	Things others do and information that they provide about you. We also receive and analyse content, communications and information that other people provide when they use our Products. This can include information about you, such as when others share or comment on a photo of you, send a message to you or upload, sync or import your contact information.
+Device information.
+As described below, we collect information from and about the computers, phones, connected TVs and other web-connected devices you use that integrate with our Products, and we combine this information across different devices that you use. For example, we use information collected about your use of our Products on your phone to better personalise the content (including ads) or features that you see when you use our Products on another device, such as your laptop or tablet, or to measure whether you took an action in response to an ad that we showed you on your phone on a different device. 
+
+Information that we obtain from these devices includes: 
+
+
+•	Device attributes: information such as the operating system, hardware and software versions, battery level, signal strength, available storage space, browser type, app and file names and types, and plugins.
+•	Device operations: information about operations and behaviours performed on the device, such as whether a window is foregrounded or backgrounded, or mouse movements (which can help distinguish humans from bots).
+•	Identifiers: unique identifiers, device IDs and other identifiers, such as from games, apps or accounts that you use, and Family Device IDs (or other identifiers unique to Step2Fame (Graviton Media Tech Company Products) associated with the same device or account).
+•	Device signals: Bluetooth signals, information about nearby Wi-Fi access points, beacons and mobile phone masts.
+•	Data from device settings: information that you allow us to receive through device settings that you turn on, such as access to your GPS location, camera or photos.
+•	Network and connections: information such as the name of your mobile operator or ISP, language, time zone, mobile phone number, IP address, connection speed and, in some cases, information about other devices that are nearby or on your network, so we can do things such as help you stream a video from your phone to your TV.
+•	Cookie data: data from cookies stored on your device, including cookie IDs and settings. Learn more about how we use cookies in the Step2Fame Cookies Policy and Instagram Cookies Policy.
+
+
+Information from partners.
+Advertisers, app developers and publishers can send us information through Step2Fame Business Tools that they use, including our social plugins (such as the Like button), Step2Fame Login, our APIs and SDKs, or the Step2Fame pixel. These partners provide information about your activities off Step2Fame – including information about your device, websites you visit, purchases you make, the ads you see and how you use their services – whether or not you have a Step2Fame account or are logged in to Step2Fame. For example, a game developer could use our API to tell us what games you play, or a business could tell us about a purchase you made in its shop. We also receive information about your online and offline actions and purchases from third-party data providers who have the rights to provide us with your information. 
+
+Partners receive your data when you visit or use their services, or through third parties that they work with. We require each of these partners to have lawful rights to collect, use and share your data before providing us with any data.  
+
+To learn more about how we use cookies in connection with Step2Fame Business Tools, review the Step2Fame Cookie Policy. 
+
+How do we use this information?
+We use the information that we have (subject to choices you make) as described below, and to provide and support the Step2Fame Products and related services described in the Step2Fame Terms. Here's how: 
+Provide, personalise and improve our Products.
+We use the information we have to deliver our Products, including to personalise features and content (including your Projects  and ads) and make suggestions for you (such as groups or upcoming projects you may be interested in or project you may want to follow) on and off our Products. To create personalised Products that are unique and relevant to you, we use your connections, preferences, interests and activities based on the data that we collect and learn from you and others (including any data with special protections you choose to provide); how you use and interact with our Products; and the people, places or things that you're connected to and interested in on and off our Products. Learn more about how we use information about you to personalise your Step2Fame experience, including features, content and recommendations in Step2Fame Products; you can also learn more about how we choose the adsthat you see. 
+•	Information across Step2Fame Products and devices: We connect information about your activities on different Step2Fame Products and devices to provide a more tailored and consistent experience on all Step2Fame Products that you use, wherever you use them. For example, we can suggest that you apply a job post on Step2Fame. We can also make your experience more seamless, for example, by automatically filling in your registration information (such as your phone number) from one Step2Fame Product when you sign up for an account on a different Product.
+•	Location-related information: We use location-related information – such as your current location, where you live, the places you like to go, and the businesses and people you're near – to provide, personalise and improve our Products, including ads, for you and others. Location-related information can be based on things such as precise device location (if you've allowed us to collect it), IP addresses and information from your and others' use of Step2Fame Products (such as check-ins or work you attend).
+•	Product research and development: We use the information we have to develop, test and improve our Products, including by conducting surveys and research, and testing and troubleshooting new products and features.
+•	Ads and other sponsored content:We use the information we have about you – including information about your interests, actions and connections – to select and personalise ads, offers and other sponsored content that we show you. Learn more about how we select and personalise ads, and your choices over the data we use to select ads and other sponsored content for you in the Step2Fame Settings.
+
+Provide measurement, analytics and other business services.
+We use the information that we have (including your activity off our Products, such as the websites you visit and ads you see) to help advertisers and other partners measure the effectiveness and distribution of their ads and services, and understand the types of people who use their services and how people interact with their websites, apps and services. 
+
+Promote safety, integrity and security.
+We use the information that we have to verify accounts and activity, combat harmful conduct, detect and prevent spam and other bad experiences, maintain the integrity of our Products, and promote safety and security on and off Step2Fame Products. For example, we use data that we have to investigate suspicious activity or breaches of our Terms or Policies, or to detect when someone needs help. 
+
+Communicate with you.
+We use the information that we have to send you marketing communications, communicate with you about our Products and let you know about our Policies and Terms. We also use your information to respond to you when you contact us. 
+
+How is this information shared?
+Your information is shared with others in the following ways: 
+
+
+Sharing on Step2Fame Products
+People and accounts that you share and communicate with
+When you share and communicate using our Products, you choose the audience for what you share. For example, when you post on Step2Fame, you select the audience for the post, such as a group, all of your friends, the public or a customised list of people. Similarly, when you communicate with people or businesses, those people and businesses can see the content you send. Your network can also see actions that you have taken on our Products, including engagement with ads and sponsored content. We also let other accounts see who has viewed their Step2Fame profile. 
+
+Public information can be seen by anyone, on or off our Products, including if they don't have an account. This includes your username, any information you share with a public audience, information in your public profile on Step2Fame, and content you share on a Step2Fame Page or any other public forum. You, other people using Step2Fame, and we can provide access to or send public information to anyone on or off our Products, including in other Step2Fame or Graviton Media tech Company Products, in search results or through tools and APIs. Public information can also be seen, accessed, reshared or downloaded through third-party services such as search engines, APIs and offline media such as TV, and by apps, websites and other services that integrate with our Products. 
+
+
+Content that others share or reshare about you.
+You should consider who you choose to share with, because people who can see your activity on our Products can choose to share it with others on and off our Products, including people and businesses outside the audience that you shared with. For example, when you share a project or send a message to specific friends or accounts, they can download, screenshot or reshare that content to others across or off our Products, in person or in virtual reality experiences. Also, when you comment on someone else's post or react to their content, your comment or reaction is visible to anyone who can see the other person's content, and that person can change the audience later. 
+
+People can also use our Products to create and share content about you with the audience they choose. For example, people can share a photo of you in a story, mention or tag you at a location in a post, or share information about you in their posts or messages. If you are uncomfortable with what others have shared about you on our Products, you can choose to stop the user from sharing the content. 
+
+Information about your active status or presence on our Products.
+People in your networks can see signals telling them whether you are active on our Products, including whether you are currently active on Step2Fame, or when you last used our Products. 
+Apps, websites and third-party integrations on or using our Products.
+When you choose to use third-party apps, websites or other services that use, or are integrated with, our Products, they can receive information about what you post or share. For example, when you play a game with your Step2Fame friends or use a Step2Fame Comment or Share button on a website, the game developer or website can receive information about your activities in the game or receive a comment or link that you share from the website on Step2Fame. Also, when you download or use such third-party services, they can access your public profile on Step2Fame, and any information that you share with them. Apps and websites that you use may receive your list of Step2Fame contacts if you choose to share it with them. But apps and websites that you use will not be able to receive any other information about your Step2Fame contacts from you, or information about any of your Instagram followers (although your friends and followers may, of course, choose to share this information themselves). Information collected by these third-party services is subject to their own terms and policies, not this one. 
+
+Devices and operating systems providing native versions of Step2Fame (i.e. where we have not developed our own first-party apps) will have access to all information that you choose to share with them, including information that your friends share with you, so they can provide our core functionality to you. 
+
+Note: We are in the process of restricting developers' data access even further to help prevent abuse. For example, we will remove developers' access to your Step2Fame data if you haven't used their app in three months, and we are changing login, so that in the next version, we will reduce the data that an app can request without app review to include only name, profile photo and email address. Requesting any other data will require our approval.
+
+New owner.
+If the ownership or control of all or part of our Products or their assets changes, we may transfer your information to the new owner. 
+
+
+Sharing with third-party partners
+We work with third-party partners who help us provide and improve our Products or who use Step2Fame Business Tools to grow their businesses, which makes it possible to operate our companies and provide free services to people around the world. We don't sell any of your information to anyone and we never will. We also impose strict restrictions on how our partners can use and disclose the data we provide. Here are the types of third parties that we share information with: 
+
+Partners who use our analytics services.
+We provide aggregated statistics and insights that help people and businesses understand how people are engaging with their posts, listings, Pages, videos and other content on and off the Step2Fame Products. For example, Page admins profiles receive information about the number of people or accounts who viewed, applied to their posts, as well as aggregate demographic and other information that helps them understand interactions with their Page or account. 
+Advertisers.
+We provide advertisers with reports about the kinds of people seeing their ads and how their ads are performing, but we don't share information that personally identifies you (information such as your name or email address that by itself can be used to contact you or identifies who you are) unless you give us permission. For example, we provide general demographic and interest information to advertisers (for example, that an ad was seen by a woman between the ages of 25 and 34 who lives in Mumbai and likes software engineering) to help them better understand their audience. We also confirm which Step2Fame ads led you to make a purchase or take an action with an advertiser. 
+
+Measurement partners.
+We share information about you with companies that aggregate it to provide analytics and measurement reports to our partners. 
+Partners offering goods and services in our Products.
+When you subscribe to receive premium content, or buy something from a seller in our Products, the content creator or seller can receive your public information and other information that you share with them, as well as the information needed to complete the transaction, including shipping and contact details. 
+
+Vendors and service providers.
+We provide information and content to vendors and service providers who support our business, such as by providing technical infrastructure services, analysing how our Products are used, providing customer service, facilitating payments or conducting surveys. 
+Researchers and academics.
+We also provide information and content to research partners and academics to conduct research that advances scholarship and innovation that supports our business or mission and enhances discovery and innovation on topics of general social welfare, technological advancement, public interest, health and well-being. 
+
+Law enforcement or legal requests.
+We share information with law enforcement or in response to legal requests in the circumstances outlined below. 
+
+Learn more about how you can control the information about you that you or others share with third-party partners in the Step2Fame settings.
+How do the Step2Fame Companies work together? 
+Step2Fame share infrastructure, systems and technology with other Step2Fame Companies (which may include any apps or websites launched by Graviton Media Tech in the future or that is live today) to provide an innovative, relevant, consistent and safe experience across all Step2Fame or Graviton Media Tech Company Products that you use. We also process information about you across the Step2Fame Companies for these purposes, as permitted by applicable law and in accordance with their Terms and Policies. For example, we process information from Step2fame about accounts sending spam on its service so we can take appropriate action against those accounts on Step2Fame or any other apps or website created and handled by Graviton Media Tech. We also work to understand how people use and interact with Step2Fame Company Products, such as understanding the number of unique users on different Step2Fame Company Products. 
+How can I manage or delete information about me? 
+We provide you with the ability to access, rectify, port and delete your data. Learn more in your Step2Fame settings. 
+
+We store data until it is no longer necessary to provide our services and Step2Fame Products or until your account is deleted – whichever comes first. This is a case-by-case determination that depends on things such as the nature of the data, why it is collected and processed, and relevant legal or operational retention needs. For example, when you search for something on Step2Fame, you can access and delete that query from within your search history at any time, but the log of that search is deleted after six months. If you submit a copy of your valid photo ID for account verification purposes, we delete that copy 30 days after submission. Learn more about deletion of content that you have shared and cookie data obtained through social plugins. 
+
+When you delete your account, we delete things that you have posted, such as your photos, videos and personal details and you won't be able to recover this information later. Information that others have shared about you isn't part of your account and won't be deleted. If you don't want to delete your account but want to temporarily stop using the Products, you can deactivate your account instead. To delete your account at any time, please visit the Step2Fame settings. 
+How do we respond to legal requests or prevent harm? 
+We access, preserve and share your information with regulators, law enforcement or others: 
+•	In response to a legal request (e.g. a search warrant, court order) if we have a good-faith belief that the law requires us to do so. This may include responding to legal requests from jurisdictions within/outside of India when we have a good-faith belief that the response is required by law in that jurisdiction, affects users in that jurisdiction and is consistent with internationally recognised standards.
+•	When we have a good-faith belief that it is necessary to: detect, prevent and address fraud, unauthorised use of the Products, breaches of our Terms or Policies, or other harmful or illegal activity; to protect ourselves (including our rights, property or Products), you or others, including as part of investigations or regulatory enquiries; or to prevent death or imminent bodily harm. For example, if relevant, we provide information to and receive information from third-party partners about the reliability of your account to prevent fraud, abuse and other harmful activity on and off our Products.
+Information we receive about you (including financial transaction data related to purchases made with Step2Fame) can be accessed and preserved for an extended period when it is the subject of a legal request or obligation, governmental investigation or investigations of possible violations of our terms or policies, or otherwise to prevent harm. We also retain information from accounts disabled for term breaches for at least a year to prevent repeat abuse or other term breaches. 
+How do we operate and transfer data as part of our global services? 
+We share information globally, both internally within the Step2Fame Companies, and externally with our partners and with those you connect and share with around the world in accordance with this Policy. Your information may, for example, be transferred or transmitted to, or stored and processed in and outside India or other countries outside of where you live for the purposes as described in this Policy. These data transfers are necessary to provide the services set forth in the Step2Fame Terms, and to globally operate and provide our Products to you. We utilise standard contract clauses, as applicable, and obtain your consent for these data transfers to India and other countries. 
+How will we notify you of changes to this Policy?
+We'll notify you before we make changes to this Policy and give you the opportunity to review the revised Policy before you choose to continue using our Products. 
+How to contact Step2Fame with questions
+You can learn more about how privacy works on Step2Fame. If you have questions about this Policy, you can contact us as described below. We may resolve disputes that you have with us in connection with our Privacy Policies and practices through step2fame.com/contact. You can contact step2fame through its website. 
+Contact us 
+You can contact us online or by writing to: 
+Step2Fame.com
+
+Overview 
+Understanding our policies 
+The following Terms, as well as our Data Policy, Community Standards and Statement of Rights and Responsibilities, apply to all creators and administrators of Pages, groups and projects on Step2Fame. You are responsible for ensuring that your Page, group or project complies with all applicable laws, statutes and regulations. 
+General policies for pages, groups, and projects 
+1. Misleading or false Pages, groups or project 
+Pages, groups and projects must not be misleading, fraudulent or deceptive. 
+Learn more
+2. Impersonation
+Pages, groups and projects must not impersonate or falsely represent a brand, entity or public figure. Where a Page, group or project is being used to express support for or interest in a brand, entity or public figure, it must make clear in the name or description that it is not an official representation. 
+Learn more
+3. Gambling
+Pages, groups and prjects must not facilitate or promote online gambling, online real money, games of skill or online lotteries without our prior written permission. 
+4. Inaccurately tagged content 
+Pages, groups and prjects must not inaccurately tag content or encourage users to inaccurately tag content. 
+5. Incentivisation 
+Pages, groups and projects must not incentivise people to misuse Step2Fame features or functionality. 
+Learn more
+6. Drug and alcohol addiction treatment 
+Pages, Groups and Projects must not promote drug and alcohol addiction treatment centres that are misleading, engaging in practices that are harmful to patients or otherwise violating applicable laws. 
+Promotions on Pages, groups 
+Communicating a promotion 
+If you use Step2Fame to communicate or administer a promotion (e.g. a contest or sweepstakes), you are responsible for the lawful operation of that promotion, including: 
+	the official rules;
+	offer terms and eligibility requirements (e.g. age and residency restrictions); and
+	Compliance with applicable rules and regulations governing the promotion and all prizes offered (e.g. registration and obtaining necessary regulatory approvals).
+Required content
+Promotions on Step2Fame must include the following: 
+	A complete release of Step2Fame by each entrant or participant; and
+	Acknowledgement that the promotion is in no way sponsored, endorsed, administered by or associated with Step2Fame.
+Administration of a promotion 
+Promotions may be administered on Pages, groups, events or within apps on Step2Fame. Personal timelines and friend connections must not be used to administer promotions (e.g. "share on your timeline to enter" or "share on your friend's timeline to get additional entries" and "tag your friends in this post to enter" are not permitted). 
+Assisting promotions 
+Step2Fame will not assist you in the administration of your promotion, and if you use our service, you agree to administer your promotion at your own risk. 
+Collection of data on Pages, groups and projects 
+Collecting data from users
+If you collect content and information directly from users, your Page, Group or Projects must make it clear that you (and not Step2Fame) are collecting it, and must provide notice about and obtain user consent for your use of the content and information that you collect. Regardless of how you obtain content and information from users, you are responsible for securing all necessary permissions to reuse their content and information. 
+Automated collection of data 
+Your Page, group or projects must not collect users' content or information, or otherwise access Step2Fame, using automated means (such as harvesting bots, robots, spiders or scrapers) without written permission from Step2Fame. 
+Calls to action 
+Your Page, group or project cannot use information obtained from a person's interaction with your Page's for any purpose other than to provide the service associated with the page. If you want to use this information for any other purpose, first obtain a person's explicit consent. 
+Processing of data for Page Insights in the EEA 
+Where you are in the EEA, the processing of data for Page Insights may be subject to the Page Insights Controller Addendum, which forms part of this Pages, Groups and Events Policy. 
+Pages-Specific Policies 
+1. Platform Policy
+Apps on your Page must comply with the Step2Fame Platform Policy. 
+2. Page names 
+Page names must not include profanity, excessively incorrect grammar or punctuation, and must not consist solely of generic terms or locations. 
+Learn more
+3. Content visibility
+Content posted to a Page is public and can be viewed by everyone who can see the Page. 
+4. Cover Photos and Profile Pictures 
+Your Page's cover photo or profile picture must not include a verified checkmark, and also must not include third-party products, brands or sponsors. 
+5. Showmarks 
+Showmarks on show Pages must accurately represent the show, and must not represent the parent entity or network. 
+6. Online pharmacies 
+Pages must not promote the sale of prescription pharmaceuticals. Pages for online pharmacies may be permitted with Step2Fame's prior approval. 
+7. Age gating 
+You must restrict access by age using Step2Fame Page gating functionality as necessary to comply with applicable laws and regulations. 
+8. Post preview 
+When sharing a third-party link from your Page, you must not edit any elements of the post preview. 
+9. Upload functionality 
+You must not misuse Step2Fame's upload functionality in connection with your Page 
+Learn more
+10. Name change and merges 
+Name changes and merges must not result in a misleading or unintended connection and must not substantially change the Page's subject matter 
+11.Driving traffic to third-party apps and sites 
+You must not accept anything of value to drive traffic to an app or site that engages in traffic arbitrage, or one that contains a disproportionate volume of ads relative to content, or content that is highly sexual, shocking, clickbait or promotes scams. 
+12. Sharing content 
+Content you post to your Page may not be reshared by other admins of the Page to other Step2Fame Products connected to the Page. 
+13. Limited originality of content 
+Pages must not post or share content that primarily consists of minimal original content. 
+Branded content on Pages 
+Branded content
+All other branded content must comply with the Step2Fame Branded Content Policies. 
+Show Pages 
+Show Pages must not include branded content within showmarks or show trailers, and must comply with the Step2Fame Branded Content Policies. 
+Necessary disclosures 
+Your Page must include all necessary disclosures to people using Step2Fame, such as any disclosures needed to indicate the commercial nature of content posted by you. 
+Jobs Policies 
+The following Jobs Policies provide guidance on what types of job posts are allowed on Step2Fame and apply to all job posts on Pages and in groups. Job posts must comply with our Standards as well as the Jobs Policies. 
+Misleading, deceptive or fraudulent jobs 
+Job posts must not promote employment opportunities that are misleading, deceptive or fraudulent. 
+Learn more
+Illegal products and services 
+Job posts must not promote employment opportunities that involve illegal activity, products or services. 
+Learn more
+Discrimination
+Job posts must not unlawfully discriminate against applicants based on any protected characteristics, including, but not limited to, race, ethnicity, colour, national origin, religion, age, sex, sexual orientation, gender identity, family status, disability, medical or genetic condition or any other basis protected under federal, state or local law. Job posts must comply with all applicable laws prohibiting discrimination. 
+Learn more
+Sexually suggestive jobs
+Job posts must not promote employment opportunities in a sexually suggestive manner. 
+Learn more
+Adult products and services 
+Job posts must not promote employment opportunities that require adult services or use of adult products. 
+Learn more
+Personal information
+Job posts must not solicit personal identification or financial information from any potential applicants. 
+Learn more
+Projects-Specific Policies 
+1. Automated projects
+projects cannot use automated means to generate project invites.
+2. Cost disclosures
+Projects must provide clear and up-front disclosure for any actions or additional costs associated with a project.
+
+
+
+         </p>
+      </div>
+    
+    </div>
+
+					
+										<div class="container-login100-form-btn">
+                                            
+											<div class="wrap-login100-form-btn">
+												<div class="login100-form-bgbtn"></div>
+												<button id="userEmailVerifyBtn" class="login100-form-btn">
+													Sign Up
+												</button>
+                      </div>
+					
+											<a href="login.html" class="dis-block txt3 hov1 p-r-30 p-t-10 p-b-10 p-l-30">
+												Login
+												<i class="fa fa-long-arrow-right m-l-5"></i>
+											</a>
+										</div>
+									<!-- </form> -->
+					
+							</div>
+							
+			</div>
+		</div>
+	</div>
+
+	<script src="js/register1.js"></script>
+
+
+<!--===============================================================================================-->
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/daterangepicker/moment.min.js"></script>
+	<script src="vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script>
+    $(".tabcontent").show();
+    //popup
+    var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+$(".reveal").on('click',function() {
+    var $pwd = $("#passId");
+    if ($pwd.attr('type') === 'password') {
+        $pwd.attr('type', 'text');
+    } else {
+        $pwd.attr('type', 'password');
+    }
+});
+
+$(".reveal1").on('click',function() {
+    var $pwd = $("#rPassId");
+    if ($pwd.attr('type') === 'password') {
+        $pwd.attr('type', 'text');
+    } else {
+        $pwd.attr('type', 'password');
+    }
+});
+
+	</script>
+
+
+</body>
+</html>

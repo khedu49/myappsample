@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+      <!--Firebase Library-->
+      <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase.js"></script>    
+    <title>Proactive Auditing</title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="dashboard_plugins/images/favicon.png">
+    <!-- Pignose Calender -->
+    <link href="dashboard_plugins/plugins/pg-calendar/css/pignose.calendar.min.css" rel="stylesheet">
+    <!-- Chartist -->
+    <link rel="stylesheet" href="dashboard_plugins/plugins/chartist/css/chartist.min.css">
+    <link rel="stylesheet" href="dashboard_plugins/plugins/chartist-plugin-tooltips/css/chartist-plugin-tooltip.css">
+    <!-- Custom Stylesheet -->
+    <link href="dashboard_plugins/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!--*******************
+        Preloader start
+    ********************-->
+    <div id="preloader">
+        <div class="loader">
+            <svg class="circular" viewBox="25 25 50 50">
+                <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10" />
+            </svg>
+        </div>
+    </div>
+    <!--*******************
+        Preloader end
+    ********************-->
+
+    
+    <!--**********************************
+        Main wrapper start
+    ***********************************-->
+    <div id="main-wrapper">
+
+        <!--**********************************
+            Nav header start
+        ***********************************-->
+        <div class="nav-header">
+            <div class="brand-logo">
+                <a href="mentor_dashboard.html">
+                    <center><b class="logo-abbr"><img src="dashboard_plugins/images/logo-fav.png" alt=""> </b></center>
+                    <!--<span class="logo-compact"><img src="./images/logo-fav.png" alt=""></span>-->
+                    <span class="brand-title">
+                        
+                        <center><img src="dashboard_plugins/images/logo.png" height="80" width="170" alt=""></center>
+                    </span>
+                </a>
+            </div>
+        </div>
+        <!--**********************************
+            Nav header end
+        ***********************************-->
+
+        <!--**********************************
+            Header start
+        ***********************************-->
+        <div class="header">    
+            <div class="header-content clearfix">
+                
+                <div class="nav-control">
+                    <div class="hamburger">
+                        <span class="toggle-icon"><i class="icon-menu"></i></span>
+                    </div>
+                </div>
+				<!--Search Bar code below-->
+                <div class="header-left">
+                    <div class="input-group icons">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-transparent border-0 pr-2 pr-sm-3" id="basic-addon1"><i class="mdi mdi-magnify"></i></span>
+                        </div>
+                        <input type="search" class="form-control" placeholder="Search Student" aria-label="Search Student">
+                        <div class="drop-down animated flipInX d-md-none">
+                            <form action="#">
+                                <input type="text" class="form-control" placeholder="Search">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <li class="icons dropdown">
+                        <div class="user-img c-pointer position-relative"   data-toggle="dropdown">
+                                <span id="username"></span>
+                            <span class="activity active"></span>
+                            <a href="app-profile.html"><img src="dashboard_plugins/images/user/form-user.png" height="40" width="40"></a>
+                        </div>    
+                    </li>
+                </div>
+            </div>
+        </div>
+        <!--**********************************
+            Header end ti-comment-alt
+        ***********************************-->
+
+        <!--**********************************
+            Sidebar start
+        ***********************************-->
+        <div class="nk-sidebar">           
+            <div class="nk-nav-scroll">
+                <ul class="metismenu" id="menu">
+                    <li class="nav-label"></li>
+                    <li>
+                        <a href="mentor_dashboard.html" aria-expanded="false">
+                            <i class="icon-speedometer menu-icon"></i><span class="nav-text">Dashboard</span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="add_student.html" aria-expanded="false">
+                            <i class="fa fa-plus"></i><span class="nav-text">Add Student</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="update_student_profile.html" aria-expanded="false">
+                            <i class="fa fa-times"></i><span class="nav-text">Update Student</span>
+                        </a>
+                    </li>
+                    <li>
+                            <a href="add_achievements.html" aria-expanded="false">
+                                <i class="fa fa-plus"></i><span class="nav-text">Add Achievements</span>
+                            </a>
+                        </li>
+                    <li>
+                        <a href="remove_student.html" aria-expanded="false">
+                            <i class="fa fa-times"></i><span class="nav-text">Remove Student</span>
+                        </a>
+                    </li>
+					<li>
+                        <a href="app-profile.html" aria-expanded="false">
+                            <i class="icon-user"></i><span class="nav-text">Profile</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a id="logout" href="index.html" aria-expanded="false">
+                            <i class="icon-key"></i><span class="nav-text">Logout</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--**********************************
+            Sidebar end
+        ***********************************-->
+
+        <!--**********************************
+            Content body start
+        ***********************************-->
+        <div class="content-body">
+
+            <div class="container-fluid mt-3">
+                
+
+                <center>
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Chart</h4>
+                                <div id="smil-animations" class="ct-chart ct-golden-section"></div>
+                            </div>
+                        </div>
+                    </div>
+				</center>
+                
+                
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="active-member">
+                                    <div class="table-responsive">
+                                        <table class="table table-xs mb-0">
+                                            <thead>
+                                                <tr>
+                                                    <th>StudentID</th>
+													<th>Name</th>
+                                                    <th>Email-ID</th>
+                                                    <th>Branch</th>
+                                                    <th>Probability</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="addingtable">
+
+                                                <tr>
+                                                    <td>6</td>
+													<td><img src="dashboard_plugins/images/user/form-user.png" class=" rounded-circle mr-3" alt="">Elizabeth W.</td>
+                                                    <td>Notebook Asus</td>
+                                                    <td><span>China</span></td>
+                                                    <td>
+                                                        <div>
+                                                            <div class="progress" style="height: 6px">
+                                                                <div class="progress-bar bg-warning" style="width: 50%"></div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                        
+                    </div>
+                </div>
+
+                
+                    
+            </div>
+            <!-- #/ container -->
+        </div>
+        <!--**********************************
+            Content body end
+        ***********************************-->
+        
+        
+        <!--**********************************
+            Footer start
+        ***********************************-->
+        <div class="footer">
+            <div class="copyright">
+                <p>Copyright &copy; Designed & Developed by CodeBless</p>
+            </div>
+        </div>
+        <!--**********************************
+            Footer end
+        ***********************************-->
+    </div>
+    <!--**********************************
+        Main wrapper end
+    ***********************************-->
+
+    <!--**********************************
+        Scripts
+    ***********************************-->
+    <script src="js/auth.js"></script>
+    <script src="js/mentor_dashboard.js"></script>
+    <script src="dashboard_plugins/plugins/common/common.min.js"></script>
+    <script src="dashboard_plugins/js/custom.min.js"></script>
+    <script src="dashboard_plugins/js/settings.js"></script>
+    <script src="dashboard_plugins/js/gleek.js"></script>
+    <script src="dashboard_plugins/js/styleSwitcher.js"></script>
+
+    <!-- Chartjs -->
+    <script src="dashboard_plugins/plugins/chart.js/Chart.bundle.min.js"></script>
+    <!-- Circle progress -->
+    <script src="dashboard_plugins/plugins/circle-progress/circle-progress.min.js"></script>
+    <!-- ChartistJS -->
+    <script src="dashboard_plugins/plugins/chartist/js/chartist.min.js"></script>
+    <script src="dashboard_plugins/plugins/chartist-plugin-tooltips/js/chartist-plugin-tooltip.min.js"></script>
+    <script src="dashboard_plugins/js/plugins-init/chartist.init.js"></script>
+
+
+
+    <script src="dashboard_plugins/js/dashboard/dashboard-1.js"></script>
+
+</body>
+
+</html>

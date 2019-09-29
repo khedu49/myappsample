@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <title>Proactive Auditing</title>
+    <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase.js"></script> 
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="dashboard_plugins/images/favicon.png">
+    <!-- Pignose Calender -->
+    <link href="dashboard_plugins/plugins/pg-calendar/css/pignose.calendar.min.css" rel="stylesheet">
+    <!-- Chartist -->
+    <link rel="stylesheet" href="dashboard_plugins/plugins/chartist/css/chartist.min.css">
+    <link rel="stylesheet" href="dashboard_plugins/plugins/chartist-plugin-tooltips/css/chartist-plugin-tooltip.css">
+    <!-- Custom Stylesheet -->
+    <link href="dashboard_plugins/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!--*******************
+        Preloader start
+    ********************-->
+    <div id="preloader">
+        <div class="loader">
+            <svg class="circular" viewBox="25 25 50 50">
+                <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10" />
+            </svg>
+        </div>
+    </div>
+    <!--*******************
+        Preloader end
+    ********************-->
+
+    
+    <!--**********************************
+        Main wrapper start
+    ***********************************-->
+    <div id="main-wrapper">
+
+        <!--**********************************
+            Nav header start
+        ***********************************-->
+        <div class="nav-header">
+            <div class="brand-logo">
+                <a href="student_dashboard.html">
+                    <center><b class="logo-abbr"><img src="dashboard_plugins/images/logo-fav.png" alt=""> </b></center>
+                    <!--<span class="logo-compact"><img src="dashboard_plugins/images/logo-fav.png" alt=""></span>-->
+                    <span class="brand-title">
+                        <center><img src="dashboard_plugins/images/logo.png" height="80" width="170" alt=""></center>
+                    </span>
+                </a>
+            </div>
+        </div>
+        <!--**********************************
+            Nav header end
+        ***********************************-->
+
+        <!--**********************************
+            Header start
+        ***********************************-->
+        <div class="header">    
+            <div class="header-content clearfix">
+                
+                <div class="nav-control">
+                    <div class="hamburger">
+                        <span class="toggle-icon"><i class="icon-menu"></i></span>
+                    </div>
+                </div>
+				
+                <div class="header-right">
+                    <li class="icons dropdown">
+                        <div class="user-img c-pointer position-relative"   data-toggle="dropdown">
+                            <span class="activity active"></span>
+                            <a href="app-profile.html"><img src="dashboard_plugins/images/user/form-user.png" height="40" width="40"></a>
+                        </div>    
+                    </li>
+                </div>
+            </div>
+        </div>
+        <!--**********************************
+            Header end ti-comment-alt
+        ***********************************-->
+
+        <!--**********************************
+            Sidebar start
+        ***********************************-->
+        <div class="nk-sidebar">           
+            <div class="nk-nav-scroll">
+                <ul class="metismenu" id="menu">
+                    <li class="nav-label"></li>
+                    <li>
+                        <a href="mentor_dashboard.html" aria-expanded="false">
+                            <i class="icon-speedometer menu-icon"></i><span class="nav-text">Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a id="logout" aria-expanded="false">
+                            <i class="icon-key"></i><span class="nav-text">Logout</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--**********************************
+            Sidebar end
+        ***********************************-->
+
+        <!--**********************************
+            Content body start
+        ***********************************-->
+        <div class="content-body">
+
+            <div class="container-fluid mt-3">
+                <div class="row">
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card gradient-1">
+                            <div class="card-body">
+                                <h3 class="card-title text-white" id="sid"> </h3>
+                                <div class="d-inline-block">
+                                    <h3 class="text-white" id="sname"></h3>
+                                    <h5 class="text-white mb-0" id="semail"></h5>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card gradient-2">
+                            <div class="card-body">
+                                <h3 class="card-title text-white">Average</h3>
+                                <div class="d-inline-block">
+                                    <h2 class="text-white">8541</h2>
+                                    <p class="text-white mb-0">of comapnies accepting considering all activities</p>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card gradient-3">
+                            <div class="card-body">
+                                <h3 class="card-title text-white">Average</h3>
+                                <div class="d-inline-block">
+                                    <h2 class="text-white" id="avg"> </h2>
+                                    <p class="text-white mb-0">in all kinds of activities</p>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card gradient-4">
+                            <div class="card-body">
+                                <h3 class="card-title text-white">Probability</h3>
+                                <div class="d-inline-block">
+                                    <h2 class="text-white" id="studProb"> </h2>
+                                    <p class="text-white mb-0">of getting placed in a company</p>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        
+						<!--
+						<div class="card">
+							<div class="card-body">
+								<h4 class="card-title">Single Bar Chart</h4>
+								<canvas id="singelBarChart" width="500" height="250"></canvas>
+							</div>
+						</div>
+						-->
+						
+						<div class="card card-widget">
+                            <div class="card-body">
+                                
+                                <div class="mt-4">
+                                    <h4>Academics</h4>
+                                    <h4><span class="pull-right" id="acad"> </span></h4>
+                                    
+                                    <div class="progress mb-3" style="height: 7px">
+                                        <div class="progress-bar bg-primary" id="s-acd" role="progressbar">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-4">
+                                    <h4>Extra-curricular Activities</h4>
+                                    <h4><span class="pull-right" id="extra"> </span></h4>
+                                        <div class="progress mb-3" style="height: 7px">
+                                            <div class="progress-bar bg-success" id="s-extc" role="progressbar">
+                                            </div>
+										</div>
+								</div>
+                                <div>
+                                    <div class="mt-4">
+                                        <h4>Technical Activities</h4>
+                                        <h4><span class="pull-right" id="tech"> </span></h4>
+                                        <div class="progress mb-3" style="height: 7px">
+                                            <div class="progress-bar bg-warning" id="s-tech" role="progressbar">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+						</div>
+					</div>
+				</div>
+    
+
+                <div class="row">
+                    <div class="col-xl-3 col-lg-6 col-sm-6 col-xxl-6">
+
+                        <div class="card">
+                            <!--<div class="chart-wrapper mb-4">
+                                <div class="px-4 pt-4 d-flex justify-content-between">
+                                    <div>
+                                        <h4>Sales Activities</h4>
+                                        <p>Last 6 Month</p>
+                                    </div>
+                                    <div>
+                                        <span><i class="fa fa-caret-up text-success"></i></span>
+                                        <h4 class="d-inline-block text-success">720</h4>
+                                        <p class=" text-danger">+120.5(5.0%)</p>
+                                    </div>
+                                </div>
+                                <div>
+                                        <canvas id="chart_widget_3"></canvas>
+                                </div>
+                            </div>-->
+                            <div class="card-body border-top pt-4">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div>
+                                            <h5>Improvements Needed</h5>
+                                        </div>
+										<ul>
+                                            <li>Excelling in Extra-curricular activities</li>
+                                            <li>Need to focus on improving academics.</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div id="chart_widget_3_1"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-6 col-sm-6 col-xxl-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Acheivements</h4>
+                                <div id="activity">
+                                    <div class="media border-bottom-1 pt-3 pb-3">
+                                        <img width="35" src="dashboard_plugins/images/avatar/ach.png" class="mr-3 rounded-circle">
+                                        <div class="media-body">
+                                            <h5>Hackathon</h5>
+                                            <p class="mb-0">Runner-up in Smart India Hackathon</p>
+                                        </div><span class="text-muted ">Feb 24, 2017</span>
+                                    </div>
+                                    <div class="media border-bottom-1 pt-3 pb-3">
+                                        <img width="35" src="dashboard_plugins/images/avatar/ach.png" class="mr-3 rounded-circle">
+                                        <div class="media-body">
+                                            <h5>Group Discussion</h5>
+                                            <p class="mb-0">Third Price in College's annual competiton</p>
+                                        </div><span class="text-muted ">March 15, 2018</span>
+                                    </div>
+                                    <div class="media border-bottom-1 pt-3 pb-3">
+                                        <img width="35" src="dashboard_plugins/images/avatar/ach.png" class="mr-3 rounded-circle">
+                                        <div class="media-body">
+                                            <h5>3 Research Paper</h5>
+                                            <p class="mb-0">Presented IEEE Research Paper</p>
+                                        </div><span class="text-muted ">Sept 18, 2018</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>    
+            </div>
+            <!-- #/ container -->
+        </div>
+        <!--**********************************
+            Content body end
+        ***********************************-->
+        
+        
+        <!--**********************************
+            Footer start
+        ***********************************-->
+        <div class="footer">
+            <div class="copyright">
+                <p>Copyright &copy; Designed & Developed by CodeBless</p>
+            </div>
+        </div>
+        <!--**********************************
+            Footer end
+        ***********************************-->
+    </div>
+    <!--**********************************
+        Main wrapper end
+    ***********************************-->
+
+    <!--**********************************
+        Scripts
+    ***********************************-->
+    <script src="js/student_dashboard.js"></script>
+    <script src="dashboard_plugins/plugins/common/common.min.js"></script>
+    <script src="dashboard_plugins/js/custom.min.js"></script>
+    <script src="dashboard_plugins/js/settings.js"></script>
+    <script src="dashboard_plugins/js/gleek.js"></script>
+    <script src="dashboard_plugins/js/styleSwitcher.js"></script>
+
+    <!-- Chartjs -->
+    <script src="dashboard_plugins/plugins/chart.js/Chart.bundle.min.js"></script>
+    <!-- Circle progress -->
+    <script src="dashboard_plugins/plugins/circle-progress/circle-progress.min.js"></script>
+    <!-- Datamap -->
+    <script src="dashboard_plugins/plugins/d3v3/index.js"></script>
+    <script src="dashboard_plugins/plugins/topojson/topojson.min.js"></script>
+    <script src="dashboard_plugins/plugins/datamaps/datamaps.world.min.js"></script>
+    <!-- Morrisjs -->
+    <script src="dashboard_plugins/plugins/raphael/raphael.min.js"></script>
+    <script src="dashboard_plugins/plugins/morris/morris.min.js"></script>
+    <!-- Pignose Calender -->
+    <script src="dashboard_plugins/plugins/moment/moment.min.js"></script>
+    <script src="dashboard_plugins/plugins/pg-calendar/js/pignose.calendar.min.js"></script>
+    <!-- ChartistJS -->
+    <script src="dashboard_plugins/plugins/chartist/js/chartist.min.js"></script>
+    <script src="dashboard_plugins/plugins/chartist-plugin-tooltips/js/chartist-plugin-tooltip.min.js"></script>
+    <script src="dashboard_plugins/js/plugins-init/chartist.init.js"></script>
+
+
+
+    <script src="dashboard_plugins/js/dashboard/dashboard-1.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,84 @@
+.img-circle1 {
+  border-radius: 50%;
+}
+.img-circle1 {
+  border-radius: 0;
+}
+
+.ratio1 {
+  float:left;
+	width: 10%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  height: 0;
+  padding-bottom: 20%;
+  /* position: left;
+  width: 100%; */
+  left: 160%;
+
+  
+}
+/* dashboard k profile div ka photu */
+.ratio3 {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+
+
+  height: 0;
+  padding-bottom: 100%;
+  position: left;
+  width: 100%;
+  left: 160%;
+  
+}
+/* .img-circle {
+  border-radius: 50%;
+ 
+} */
+.img-responsive1 {
+  display: block;
+  height: auto;
+  max-width: 100%;
+
+ 
+}
+
+
+
+
+
+.img-circle2 {
+  border-radius: 50%;
+}
+.img-circle2 {
+  border-radius: 0%;
+}
+
+.ratio2 {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+
+
+  height: 0;
+  padding-bottom: 0%;
+  padding-left: 80px;
+  position: center;
+  width: 80%;
+  left: 160%;
+
+  
+}
+/* .img-circle {
+  border-radius: 50%;
+ 
+} */
+.img-responsive2 {
+  display: block;
+  height: auto;
+  max-width: 100%;
+
+ 
+}
